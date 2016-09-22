@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Python - 21/09/2016</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+      @import url(http://fonts.googleapis.com/css?family=Droid+Serif);
+      @import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+
+      body {
+        font-family: 'Droid Serif';
+        font-size: 20px;
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+      h1 { font-size: 4em; }
+      h2 { font-size: 2em; }
+      h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      font-size: 70%;
+      }
+      .small{
+      font-size: 70%;
+      }
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(249, 38, 114);
+        text-decoration: none;
+      }
+      code {
+        -moz-border-radius: 5px;
+        -web-border-radius: 5px;
+        background: #e7e8e2;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      .licorne{
+      background: #FFF0F5; /*LavenderBlush*/
+      }
+
+      .licorne h1{
+      background: transparent url("http://plancq.clement.free.fr/img/licorne.png") no-repeat;
+      padding-left: 80px;
+      color: #8A2BE2;
+      }
+      
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 50%;
+        height: 92%;
+        float: left;
+      }
+        .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 45%;
+        float: right;
+        padding-top: 1em;
+      }
+    </style>  
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle, inverse
+
+# Langages de script - Python
+## 21 septembre 2016 - Premiers pas
+### M2 Ingénierie Multilingue - INaLCO
+#### Clément Plancq - <small>clement.plancq@ens.fr</small>
+
+---
+
+# Avant de commencer
+
+* Nous travaillerons avec Python3 (3.4 ou 3.5)
+
+* Pour le travail avec la console vous utiliserez `ipython` ou `python3`    
+.small[(tapez `python3` ou `ipython` dans un terminal pour accéder à la console)]
+
+
+* Choisissez l'éditeur de texte que vous préférez.
+
+* Vos scripts devront être encodés en utf-8, indiquez-le dans vos scripts avec le commentaire suivant en première ligne :
+    `# -*- coding: utf-8 -*-` ou `# coding=utf-8`
+
+* Pour exécuter vos scripts, deux options :
+
+	`> python3 mon_script.py`
+
+	ou 
+
+	`> chmod u+x`  
+	`> ./mon_script.py` en ajoutant ce shebang en première ligne :    
+	`#!/usr/bin/env python3`
+
+---
+
+# Opérations mathématiques
+
+.left-column[
+Dans une console python :  
+
+```python3
+>>> 2+2
+4
+>>> 3-2
+1
+>>> 3-4
+-1
+>>> 2*3
+6
+>>> 36 / 6
+6.0
+>>> 36 / (2*3)
+6.0
+>>> 36 % 8
+4
+>>> 10**2 * 4
+400
+```
+]
+.right-column[
+### Opérateurs mathématiques
+**+** addition  
+**-** soustraction  
+__*__ multiplication  
+**/** division  
+**%** modulo (reste de la division)  
+__**__ puissance
+
+* L'ordre des opérations est l'ordre classique en mathématiques (puissance passe avant les opérations).
+* vous pouvez utiliser des parenthèses pour définir des priorités.
+]
+---
+
+# Les chaînes de caractères
+
+.left-column[
+```python3
+>>> "Hello" + "world"
+'Helloworld'
+>>> "Hello" + " " + 'world'
+'Hello world'
+>>> 'Ça donne une erreur t'as vu'
+SyntaxError: invalid syntax
+>>> "Ça donne une erreur t'as vu"
+Ça donne une erreur t'as vu
+```
+]
+.right-column[
+* **+** est aussi l'opérateur de concaténation de chaînes de caractères  
+* Les chaînes de caractères sont entourées soit de quotes simples `'`, soit de guillemets `"`
+* Si votre mot contient une apostrophe, entourez-le de guillemets `"`
+]
+
+---
+# Les variables
+
+.left-column[
+```python3
+var = 3+2
+var
+>>> 5
+another_var = var
+print(another_var)
+>>> 5
+another_var_2 = var + 1
+another_var_2
+>>> 6
+var = "Le canard sort le mercredi"
+print(var)
+>>> Le canard sort le mercredi
+var = 1
+var = var + 1
+var
+>>> 2
+import keyword
+print(keyword.kwlist)
+```
+]
+
+.right-column[
+* L'affectation des variables se fait à l'aide du symbole `=`    
+`var = value`
+* Si la variable est placée à droite du symbole `=`, sa *valeur* est affectée à la variable placée à gauche.
+* Les noms de variable sont composés de car. alphabétiques (min ou maj), des chiffres et de l'underscore. C'est tout.
+* Les noms de variable sont choisis par le programmeur, ils doivent être le plus clair possible.
+En réalité il est conseillé de suivre la [PEP 8](https://www.python.org/dev/peps/pep-0008/).
+* Seuls les mots réservés sont interdits.
+]
+---
+class: licorne
+# Help !
+## PEP, quesaco ?
+
+PEP : Python Enhancement Proposals
+
+Python est sous licence libre. Le langage a été créé par Guido Van Rossum mais depuis 2001 le développement de Python est géré par la [Python Software Foundation](http://www.python.org/psf/) (dont Guido est le *"benevolent dictator for life"*).
+
+Les évolutions du langage sont détaillées dans ces PEP (proposées, examinées, corrigées, acceptées puis implémentées).
+
+Les PEP les plus célèbres sont
+* [PEP 20](https://www.python.org/dev/peps/pep-0020/) "Zen of Python".red[*] (tapez `import this` dans une console)
+* [PEP 8](https://www.python.org/dev/peps/pep-0008/) "Style Guide for Python Code"
+
+.footnote[.red[*] "There should be one-- and preferably only one --obvious way to do it." Tacle par derrière sur Perl, c'est pas joli-joli.]
+---
+# Les types
+
+.left-column[
+```python3
+>>> "Hello" + 1
+TypeError: Can't convert 'int' object to str implicitly
+>>> type("Hello")
+<class 'str'>
+>>> type(1)
+<class 'int'>
+>>> type(2.5)
+<class 'float'>
+>>> type(True)
+<class 'bool'>  
+>>> int(3.14159265359)
+3 
+>>> "Hello" + str(1)
+'Hello1'
+  
+```
+]
+
+.right-column[
+* Python est un langage à typage *dynamique* fort : le type d'une variable est déterminé par l'interpréteur.
+* Python est un langage à typage dynamique *fort* : pas de conversion implicite, certaines actions sont interdites.
+* La fonction `type()` retourne le type de la variable donnée en argument.
+* `str()`, `int()`, `float()` convertit l'argument dans le type désiré.
+* `bool()` retourne `True` si l'argument est vrai, `False` sinon.
+]
+
+---
+class: licorne
+# Help !
+
+Nous venons d'utiliser 4 fonctions.
+
+Avant d'utiliser une fonction il est indispensable de savoir : ce que fait la fonction, quels sont les paramètres attendus, quelle est la valeur de retour.
+
+Pour accéder à la documentation d'une fonction :
+* dans la console : `help(int)` .small[(d'une fonction ou d'une classe ou d'un module)].   
+.small[`q` pour sortir de la doc.]
+* sur le web : [https://docs.python.org/3/library/functions.html](https://docs.python.org/3/library/functions.htm)
+* ou bien : [DevDocs](http://devdocs.io/)
+
+---
+# Les structures conditionnelles
+
+.left-column[
+```python3
+>>> if condition:
+...     #begin of block
+...     instruction1
+...     instruction2
+...     #end of block
+...
+>>> x = 4
+>>> if x > 3:
+...     print("x a grandi")	   
+...
+x a grandi	  
+>>> if x > 3:
+...     print("x a grandi")	   
+... else:
+...     print("x n'a pas grandi")
+...
+x a grandi	  
+>>> if x > 3:
+...     print("x a grandi")	   
+... elif (x > 3 and x < 5):
+...     print("un petit peu")
+... else:
+...     print("x n'a pas grandi")
+...
+un petit peu
+```
+]
+ 
+.right-column[
+### Opérateurs booléens
+**not** négation  
+**and** conjonction (True si les deux opérandes sont vraies, False sinon)  
+**or**  disjonction (True si une des deux opérandes est vraie)  
+
+### Opérateurs de comparaison
+**<**  inférieur    
+**<=** inférieur ou égal  
+**>**  supérieur     
+**>=** supérieur ou égal  
+**==** égal  
+**!=** non égal  
+**is** identité (pour les objets surtout)  
+**is not** non identité  
+]
+
+---
+# Les listes
+#### Vite fait, on y reviendra
+			
+.left-column[
+```python3
+>>> voyelles = []
+>>> voyelles = ['a', 'e', 'i', 'o', 'u']    
+>>> voyelles[0]
+'a'    
+>>> voyelles.append('y')
+>>> voyelles
+['a', 'e', 'i', 'o', 'u', 'y'] 
+>>> nb_voyelles = len(voyelles)    
+>>> print("Il y a " + nb_voyelles + "voyelles")
+>>> if 'a' in voyelles:
+...     print('a est une voyelle')  
+```
+]
+ 
+.right-column[
+* Une liste une structure de données ordonnée
+* Une liste peut contenir plusieurs valeurs, variables, listes, objets, ... le tout de types différents
+* On accède à un élément de la liste par son indice (de 0 à n-1, n étant le nombre d'éléments)
+]
+
+---
+# Les dictionnaires
+#### Vite fait, on y reviendra
+			
+.left-column[
+```python3
+>>> couleurs = {'a':'noir', 'e':'blanc', 'i':'rouge', 'u':'vert', 'o':'bleu'}
+>>> couleurs['e']
+'blanc'    
+>>> couleurs['i'] = pourpre 
+>>> couleurs['i']
+'pourpre'    
+>>> voyelles.remove('s')
+>>> voyelles.append('y')
+>>> nb_voyelles = len(voyelles)    
+>>> print("Il y a " + nb_voyelles + "voyelles")
+>>> if 'a' in voyelles:
+...     print('a est une voyelle')  
+```
+]
+ 
+.right-column[
+* Un dictionnaire est une structure de données associative de type 'clé' => 'valeur'
+* Les données ne sont pas ordonnées comme dans les listes
+* On accède à une valeur par sa clé
+* Les clés sont uniques, on ne peut pas associer deux valeurs à une même clé    
+* `keys()` renvoie la liste des clés, `values()` la liste des valeurs
+]
+
+---
+# Les boucles
+#### Vite fait, on y reviendra
+			
+.left-column[
+```python3
+>>> i = 1
+>>> while i < 5:
+...     print(i)
+...     i = i + 1
+...
+	      
+>>> for item in voyelles:
+...     print(item)      
+...
+>>> for key in couleurs.keys():
+...     print(key + " : " + couleurs[key])
+...      
+>>> for key, value in couleurs.items():
+...     print(key + " : " + value)
+...      
+```
+]
+ 
+.right-column[
+* Les boucles `while` nécessitent que la valeur utilisée dans la condition d'arrêt soit modifiée dans le corps de la boucle.
+* Les boucles `for` s'appliquent aux objets de type "iterables" (liste, chaîne de car., dict.items())
+]
+---
+# Les fonctions
+### Vite fait, on y reviendra
+			
+.left-column[
+```python3
+>>> def ma_fonction(arg1, arg2):
+...     #instruction1
+...     #instruction2
+...     return(resultat)
+...    
+>>> def soustraction(arg1, arg2):
+...     res = arg1 - arg2
+...     return res
+...
+>>> diff = soustraction(5, 3)    
+>>> diff
+2
+>>> diff = soustraction(3, 5)    
+>>> diff
+-2
+>>> diff = soustraction(arg2=5, arg1=3)    
+>>> diff
+-2
+```
+]
+ 
+.right-column[
+* L'ordre des arguments est déterminant
+* Il est possible d'outrepasser l'ordre en nommant les arguments lors de l'appel de fonction    
+]
+
+---
+# Exos pour le 28 septembre
+
+Vous rendrez des scripts Python3. Avec des commentaires c'est mieux.      
+      
+1. Finir le chifoumi
+2. Faire un jeu un peu sur le modèle du chifoumi où l'utilisateur doit deviner un chiffre entre 1 et 10 (10 inclus). 5 essais possibles. Le jeu doit donner des indications (trop grand, trop petit) à chaque essai.
+3. Résoudre [Power of Thor - Episode 1](https://www.codingame.com/training/easy/power-of-thor-episode-1) sur CodinGame
+      
+    </textarea>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
