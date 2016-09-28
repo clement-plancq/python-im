@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Python - 28/09/2016</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+      @import url(http://fonts.googleapis.com/css?family=Droid+Serif);
+      @import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+
+      body {
+        font-family: 'Droid Serif';
+        font-size: 20px;
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+      h1 { font-size: 4em; }
+      h2 { font-size: 2em; }
+      h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      font-size: 70%;
+      }
+      .small{
+      font-size: 70%;
+      }
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(249, 38, 114);
+        text-decoration: none;
+      }
+      code {
+        -moz-border-radius: 5px;
+        -web-border-radius: 5px;
+        background: #e7e8e2;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      .licorne{
+      background: #FFF0F5; /*LavenderBlush*/
+      }
+
+      .licorne h1{
+      background: transparent url("http://plancq.clement.free.fr/img/licorne.png") no-repeat;
+      padding-left: 80px;
+      color: #8A2BE2;
+      }
+      
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 50%;
+        height: 92%;
+        float: left;
+      }
+      .left-column-black {
+        color: #000;
+        width: 50%;
+        height: 92%;
+        float: left;
+      }
+
+      .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 45%;
+        float: right;
+        padding-top: 1em;
+      }
+    </style>  
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle, inverse
+
+# Langages de script - Python
+## 28 septembre 2016 - précisions, fichiers et chaînes
+### M2 Ingénierie Multilingue - INaLCO
+#### Clément Plancq - <small>clement.plancq@ens.fr</small>
+
+---
+
+# Type `bool` et valeurs booléennes (1)
+
+* Nous avons vu qu'il existe un type `bool`
+
+  `True` et `False` sont les deux valeurs possibles de ce type.
+
+* Les comparaisons et les opérations booléennes renvoient des valeurs de type `bool`
+
+```python
+>>> "Hilary Clinton" == "Donald Trump"
+False
+>>> 2.0 < 2.1 and 2.0 > 1.9
+True
+```
+
+* Les conditions des structures conditionnelles et des boucles `while` évaluent des *valeurs booléennes*
+	
+```python
+>>> while condition:
+...
+>>> if condition:
+...	
+```
+
+---
+
+# Type `bool` et valeurs booléennes (2)
+
+* Les valeurs ci-dessous sont toutes évaluées par l'interpréteur comme ayant la valeur booléenne *false*
+
+  `False` `None` `0` `""` `()` `[]` `{}`
+
+* Tout le reste.red[*] sera évalué comme _true_
+
+  Vous pouvez écrire :
+```python
+>>> if var:
+...
+>>> while list:
+...	
+```
+  plutôt que :  
+  (C'est même jugé plus pythonique (pythonien ?))
+
+```python
+>>> if var != "":
+...
+>>> while list != []:
+...	
+```
+	
+.footnote[.red[*] Sauf pour les objets dont vous avez construit les classes. Voir les diapos à venir sur Classes et objets.]	
+
+---
+
+# Assertions
+	
+* Les assertions (`assert condition`) permettent de vérifier qu'une condition est remplie avant de poursuivre le programme
+
+* `assert` est utilisé à des fins de débogage.
+
+
+```python
+>>> assert 1 <= var <= 10
+```
+
+est équivalent à :
+```python
+>>> if not 1 <= var <= 10:
+...     raise AssertionError
+>>> # plus exactement		       
+>>> if __debug__:
+...     if not 1 <= var <= 10: raise AssertionError
+```
+			   
+* Les assertions ne sont pas prises en compte si l'interpréteur est appelé avec l'option `-O` (optimisation)
+
+---
+
+# Précisions sur boucle `for`
+
+* `for` permet d'appliquer à chaque élément d'une liste les instructions du bloc qui suit
+			   
+```python
+>>> words = ['tout', 'ici', 'chante', 'la', 'vie', 'de', 'naguère']
+>>> for word in words:
+...     instruction1	      
+...     instruction2
+```
+
+* Plus précisément `for` s'applique sur les *séquences* (`list`, `str`, `tuple`) et plus généralement sur les *iterables* [voir doc](https://docs.python.org/3/glossary.html#term-iterable)
+	      
+* Les *iterables* sont des objets issus de classes qui implémentent la méthode `__iter__()` et/ou `__getitem__()`
+
+  Essayer `help(str)` ou `help(dict)`
+
+---
+
+# Boucles encore
+
+* L'instruction `continue` permet de passer à l'itération suivante
+```python
+>>> words = ['tout', 'ici', 'chante', 'la', 'vie', 'de', 'naguère']
+>>> for word in words:
+...     if word == 'la':
+...         continue
+...     instruction1
+```
+
+* L'instruction `break` permet de quitter la boucle en cours
+```python
+>>> words = ['lover', 'you', 'chould', 'have', 'come', 'over']
+>>> for word in words:
+...     if word == 'you':
+...         break
+...     instruction1
+```
+---
+	      	      
+# Boucles enfin
+
+* `zip` permet de boucler sur plusieurs séquences
+
+```python      
+>>> noms = ['einstein', 'planck', 'turing', 'curie', 'bohr', 'shannon']
+>>> facs = ['inalco', 'p3', 'p10', 'inalco', 'p3', 'inalco']
+>>> parcours = ['pro', 'r&d', 'r&d', 'pro', 'pro', 'r&d']	      
+>>> for nom, fac, parcours in zip(noms, fac, parcours):
+...     print("{} est inscrit en {} à {}".format(nom, parcours, fac))
+```
+
+* Si les séquences sont de tailles différentes `zip` s'arrête à la longueur la plus petite
+
+---
+# Les fichiers
+
+* Pour travailler avec les fichiers on doit procéder à trois opérations :
+   1. Ouverture avec la fonction `open` (renvoie `IOError` en cas d'échec)
+   2. Lecture (`read` ou `readline` ou `readlines`) et/ou écriture (`write`)
+   3. Fermeture du fichier avec la fonction `close`
+	      
+* Ouverture
+  * `open` est une fonction qui accepte de nombreux arguments : RTFM
+  * `open` renvoie un objet de type `file`	      
+  * Le plus souvent elle s'emploie de la manière suivante:
+
+```python
+>>> #f = open(filename, mode)	   
+>>> f = open('nom_fichier', 'w')
+```
+Les modes sont : 
+
+.left-column-black[
+* r : lecture (défaut)
+* w : écriture
+* x : création et écriture
+* a : concaténation (append)
+]
+	      
+.right-column[
+- b : mode binaire
+- t : mode texte (défaut)
+- \+ : read/write (ex: r+b)
+]
+	      
+---
+# Les fichiers : ouverture
+
+La documentation de Python conseille cette façon de faire 
+```python
+>>> with open('mon_fichier', 'r') as f:
+...     read_data = f.read()
+```
+L'utilisation du mot clé `with` garantit la fermeture du fichier même si une exception est soulevée
+
+---
+# Les fichiers : lecture
+
+Plusieurs options pour la lecture
+
+* fonction `read`
+
+```python
+# Les n premiers octets
+>>> 3_chars = f.read(3) 
+# Le reste du fichier
+>>> content = f.read()	      
+```
+
+* fonction `readline` et `readlines`
+```python
+>>> for line in f.readline():
+...     process(line)
+...
+>>> lines = f.readlines()     
+```
+
+* un objet `file` est un itérable !
+```python
+>>> for line in f:
+...     process(line)
+...
+```
+---
+# Les fichiers
+# Écriture et fermeture
+
+* fonction `write`
+```python
+>>> for item in list:
+...     f.write(item)
+...
+```
+
+* fonction `close`
+
+  `f.close()`
+
+  En règle générale veillez à toujours fermer les objets fichiers
+
+  En mode écriture oublier de fermer un fichier peut réserver des mauvaises surprises
+
+* `sys.stdin`, `sys.stdout` et `sys.stderr` sont des objets de type `file`
+
+---
+# Les chaînes
+
+Comme les listes et les tuples, les chaînes sont des *sequences*, on peut leur appliquer les opérations suivantes propres à la catégorie d'objets *sequence* :
+
+* longueur, minimum, maximum
+```python
+>>> var = "bonjour"
+>>> len(var)
+>>> 7
+>>> max(var)
+>>> 'r'
+```
+
+* _indexing_
+
+```python
+>>> var = "bonjour"
+>>> var[2]
+>>> 'n'
+>>> var[-1] #dernier élément
+>>> 'r'
+```
+---
+# Les chaines (2)
+
+* _slicing_
+```python
+>>> var = "bonjour"
+>>> var[0:3] # 3 premiers éléments
+>>> 'bon'
+>>> var[-3:] # 3 derniers éléments
+>>> 'our'
+```
+
+* _membership_
+```python
+>>> var = "bonjour"
+>>> if 'u' in var:
+...    print("Il y a un u dans {}".format(var))
+```
+---
+# Les chaînes (3)
+
+Les chaînes ont aussi des fonctions qui leur sont propres
+
+* lower
+```python
+>>> var = "Le Grand Quotidien National"
+>>> var.lower()
+>>> 'le grand quotidien national'
+```
+
+* replace
+```python
+>>> var = "Le Grand Quotidien National"
+>>> var = var.lower()
+>>> var.replace('na', 'bo')
+>>> 'Le grand quotidien botiobol'
+```
+
+* strip, rstrip
+
+  `strip` appelé sans arguments supprimme le ou les espaces en tête et en fin de chaîne  
+  `rstrip` fait la même chose en fin de chaîne uniquement
+
+---
+# Les chaînes (4)
+
+
+* split
+
+  `split` découpe une chaîne en fonction du séparateur passé en argument et renvoie une liste
+
+```python
+>>> var = "The concept of global warming was created by and for the Chinese in order to make U.S. manufacturing non-competitive."
+>>> words = var.split(' ')
+>>> words[:5]
+>>> ['The', 'concept', 'of', 'global', 'warming']
+```
+
+* join
+
+  `join` est l'inverse de `split`, il permet de joindre les éléments d'une liste de chaînes pour former une seule chaîne de caractères
+
+```python
+>>> list = ['Quand', 'le', 'ciel', 'bas', 'et', 'lourd']
+>>> " ".join(list)
+>>> "Quand le ciel bas et lourd"
+```
+
+---
+
+# Exos pour le 5 octobre
+
+Vous rendrez des scripts Python3. Avec des commentaires c'est mieux.      
+      
+1. Finir dictionnaire de rimes
+2. Résoudre températures sur CodinGame
+      
+    </textarea>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
