@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Python - 05/10/2016</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+      @import url(http://fonts.googleapis.com/css?family=Droid+Serif);
+      @import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+
+      body {
+        font-family: 'Droid Serif';
+        font-size: 20px;
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+      h1 { font-size: 4em; }
+      h2 { font-size: 2em; }
+      h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      font-size: 70%;
+      }
+      .small{
+      font-size: 70%;
+      }
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(249, 38, 114);
+        text-decoration: none;
+      }
+      code {
+        -moz-border-radius: 5px;
+        -web-border-radius: 5px;
+        background: #e7e8e2;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      .licorne{
+      background: #FFF0F5; /*LavenderBlush*/
+      }
+
+      .licorne h1{
+      background: transparent url("http://plancq.clement.free.fr/img/licorne.png") no-repeat;
+      padding-left: 80px;
+      color: #8A2BE2;
+      }
+      
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 50%;
+        height: 92%;
+        float: left;
+      }
+      .left-column-black {
+        color: #000;
+        width: 50%;
+        height: 92%;
+        float: left;
+      }
+
+      .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 45%;
+        float: right;
+        padding-top: 1em;
+      }
+    </style>  
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle, inverse
+
+# Langages de script - Python
+## 5 octobre 2016 - structures de données
+### M2 Ingénierie Multilingue - INaLCO
+#### Clément Plancq - <small>clement.plancq@ens.fr</small>
+
+---
+# Avant de commencer
+
+Les structures de données sont un point essentiel de tout langage de programmation
+
+Les diapos qui suivent n'offrent qu'une couverture partielle du sujet
+
+Vous *devez* lire attentivement et vous référer à la documentation officelle de Python :
+  * le [chapitre 5 du tutoriel](https://docs.python.org/3.6/tutorial/datastructures.html)
+  * la [doc](https://docs.python.org/3.6/library/stdtypes.html) sur les types built-in
+  * la [doc du module `collections`](https://docs.python.org/3/library/collections.html)
+
+---
+# Les listes
+
+* Les listes sont des *sequences* (`str`, `tuple`, `list`)
+* Les *sequences* sont des structures de données indicées qui peuvent contenir des éléments de différents types
+* Les *sequences* sont des *iterables*, les listes aussi donc
+* Les éléments d'une liste peuvent être modifiés (*mutable*)
+
+* Une liste vide peut se déclarer de deux façons 
+```python3
+>>> stack = list()
+>>> stack = [] 
+```
+
+```python3
+>>> stack = ["le", "guépard", "le", "poursuit"]
+>>> stack = list('Perl')
+>>> stack
+['P', 'e', 'r', 'l']
+```
+---
+# Les listes : fonctions
+
+* Les listes héritent des fonctions des *sequences*, elles ont également des [fonctions propres](https://docs.python.org/3.6/tutorial/datastructures.html#more-on-lists)
+* Parmi ces fonctions nous utiliserons principalement :
+  * `append(x)` : ajoute un élément *x* à la fin de la liste (haut de la pile.red[*])
+  * `extend([x, y, z])` : ajoute tous les éléments de la liste arg à la fin de la liste 
+  * `pop([index])` : supprime et renvoie le dernier élément de la liste ou les index de la liste argument si arg
+  * `index(x)` : renvoie l'index du premier élément de valeur *x*
+  * `count(x)` : renvoie le nombre de fois où *x* apparaît
+  * `sort()` : trie et modifie la liste, lire la [doc](https://docs.python.org/3.6/howto/sorting.html#sortinghowto) pour en savoir plus sur les ordres de tri
+  
+```python3
+>>> stack = [12, 15, 12, 7, 18]
+>>> stack.index(12)
+0
+>>> stack.count(12)
+2
+>>> stack.sort()
+>>> stack
+[7, 12, 12, 14, 15, 18]
+```
+
+.footnote[.red[Les listes fonctionnent comme des piles (LIFO)]]
+
+---
+# Listes en compréhension
+
+* Elles permettent de définir des listes par filtrage ou opération sur les éléments d'une autre liste
+* Elles viennent de la programmation fonctionnelle
+* La [PEP 202](https://www.python.org/dev/peps/pep-0202/) conseille de préférer les listes en compréhension aux fonctions `map()` et `filter()`
+
+
+```python3
+>>> [i ** 2 for i in range(10)]
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+
+>>> [i ** 2 for i in range(10) if i % 2 == 0]
+[0, 4, 16, 36, 64]
+
+>>> [i, j for i in range(2) for j in ['a', 'b']]
+ [(0, 'a'), (0, 'b'), (1, 'a'), (1, 'b')]
+```
+
+---
+# Les tuples
+
+* Les tuples (`tuple`) sont des *sequences* similaires aux listes sauf qu'elles ne peuvent pas être modifiées (*immutable*)
+* Les tuples sont souvent utilisées comme valeur de retour d'une fonction
+* Les tuples peuvent être utilisées comme clé de dictionnaire
+
+
+```python3
+>>> voyelles = ('a', 'e', 'i', 'o', 'u', 'y')
+>>> var = tuple('Perl')
+>>> var
+('P', 'e', 'r', 'l')
+>>> 
+```
+
+---
+# Déballage de séquences
+
+* Le *sequence unpacking* permet d'effectuer plusieurs affectations simultanées
+* L'*unpacking* s'applique souvent sur des tuples
+
+
+```python3
+>>> x, y, z = (1, 2, 3)
+>>> y
+2
+
+>>> lexique = [("maison", "mEz§"), ("serpent", "sERp@")]
+>>> for ortho, phon in lexique:
+...    print(phon)
+...
+```
+---
+# Les ensembles
+
+* Les ensembles (`set`) sont des collections non ordonnées d'élements sans doublons
+* Les ensembles supportent les fonctions mathématiques d'union, d'intersection, de différence ([doc](https://docs.python.org/3.6/library/stdtypes.html#set))
+
+```python3
+>>> ens1 = {'le', 'guépard', 'le', 'poursuit'}
+>>> ens1
+{'guépard', 'le', 'poursuit'}
+>>> ens2 = {"avec", "le", "chandelier", "dans", "la", "cuisine"}
+>>> ens1.intersection(ens2)
+{'le'}
+```
+---
+# Les dictionnaires
+
+* Les dictionnaires (`dict`) sont des structures de données associatives de type *clé*: *valeur*
+* Les clés d'un dictionnaire sont uniques, seuls les types *immutable* peuvent être des clés ([doc](https://docs.python.org/3.6/library/stdtypes.html#mapping-types-dict))
+
+  * `key in d` retourne True si `key` est une clé de `d`
+  * `keys()` retourne la liste des clés
+  * `values()` retourne la liste des valeurs
+  * `items()` retourne la liste des couples clé:valeur (tuple)
+  * `setdefault(key, default)` retourne la valeur associée à la clé. Si la clé n'existe pas, ajoute la clé associée à default
+
+```python3
+>>> d = {'Perl':'Larry Wall', 'Python':'Guido Van Rossum', 'C++':'Bjarne Stroustrup'}
+>>> d['Perl']
+'Larry Wall'
+>>> d['Ruby']
+KeyError
+>>> d.get('Ruby')
+None
+```
+
+---
+# Module collections
+
+* Le module *collections* propose des implémentations de structures de données supplémentaires
+* Dans la liste (voir [doc](https://docs.python.org/3.6/library/collections.html)), deux pourront nous intéresser :
+  * defaultdict
+
+      `defauldict` est similaire à un `dict` mais il permet l'autovivification
+
+      Son implémentation le rend plus rapide qu'un dictionnaire utilisé avec la fonction `setdefault`
+
+    ```python3
+    >>> import collections
+    >>> lexique = [("couvent", "kuv"), ("couvent", "kuv@")]
+    >>> dico = collections.defaultdict(list)
+    >>> for ortho, phon in lexique:
+    ...     dico[ortho].append(phon)
+    >>> dico
+    ```
+---
+# Module collections
+
+* Counter
+ 
+`Counter` est un dictionnaire où les valeurs attendues sont les nombres d'occurences des clés
+
+```python3
+>>> from collections import Counter
+>>> cnt = Counter()
+>>> list = ['le', 'guépard', 'le', 'poursuit']
+>>> for item in list:
+...     cnt[item] += 1
+>>> cnt
+Counter({'guépard': 1, 'le': 2, 'poursuit': 1})
+```
+
+---
+
+# Exos pour le 12 octobre
+
+Vous rendrez des scripts Python3. Avec des commentaires c'est mieux.      
+      
+1. Finir dictionnaire de rimes
+2. Finir vocabulaire commun
+3. Résoudre [Mime types](https://www.codingame.com/training/easy/mime-type) sur CodinGame
+      
+    </textarea>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
