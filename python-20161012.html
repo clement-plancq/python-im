@@ -380,7 +380,9 @@ import argparse
 parser = argparse.ArgumentParser(description="A useless script")
 parser.add_argument("-v", "--verbose", help="verbose mode", action="store_true")
 parser.add_argument("file", help="input file")
-args = parser.parse_args()
+args = vars(parser.parse_args())
+
+print(args['file'])
 ```
 
 ```bash
