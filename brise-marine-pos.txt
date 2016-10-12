@@ -1,0 +1,16 @@
+La/DET chair/NC est/V triste/ADJ ,/PONCT hélas/I !/PONCT et/CC j’/DET ai/NC lu/V tous/ADJ les/DET livres/NC ./PONCT
+Fuir/I !/PONCT là-bas/DET fuir/NC !/PONCT Je/CLS sens/V que/CS des/DET oiseaux/NC sont_ivres/V
+D’/P être/VINF parmi/P l’/DET écume/NC inconnue/ADJ et/CC les/DET cieux/NC !/PONCT
+Rien/PRO ,/PONCT ni/CC les/DET vieux/ADJ jardins/NC reflétés/VPP par/P les/DET yeux/NC
+Ne/ADV retiendra/V ce/DET coeur/NC qui/PROREL dans/P la/DET mer/NC se/CLR trempe/VS
+Ô/DET nuits/NC !/PONCT ni/CC la/DET clarté/NC déserte/ADJ de/P ma/DET lampe/NC
+Sur/P le/DET vide/NC papier/NC que/CS la/DET blancheur/NC défend/V
+Et/CC ni/CC la/DET jeune/ADJ femme/NC allaitant/VPR son/DET enfant/NC ./PONCT
+Je/CLS partirai/V !/PONCT Steamer/NPP balançant/VPR ta/DET mâture/NC ,/PONCT Lève/NPP l’/DET ancre/NC pour/P une/DET exotique/NC nature/ADJ !/PONCT
+
+Un/DET Ennui/NC ,/PONCT désolé/VPP par/P les/DET cruels/ADJ espoirs/NC ,/PONCT
+Croit/V encore/ADV à/P l’/DET adieu/NC suprême/ADJ des/P+D mouchoirs/NC !/PONCT
+Et/CC ,/PONCT peut-être/ADV ,/PONCT les/DET mâts/NC ,/PONCT invitant/VPR les/DET orages/NC ,/PONCT
+Sont/V -ils/CLS de/P ceux/PRO qu’/P un/DET vent/NC penche/ADJ sur/P les/DET naufrages/NC
+Perdus/NPP ,/PONCT sans/P mâts/NC ,/PONCT sans/P mâts/NC ,/PONCT ni/CC fertiles/ADJ îlots/NC
+Mais/CC ,/PONCT ô/P mon/DET coeur/NC ,/PONCT entends/NC le/DET chant/NC des/P+D matelots/NC !/PONCT

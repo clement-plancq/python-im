@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Python - 12/10/2016</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+      @import url(http://fonts.googleapis.com/css?family=Droid+Serif);
+      @import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+
+      body {
+        font-family: 'Droid Serif';
+        font-size: 20px;
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+      h1 { font-size: 4em; }
+      h2 { font-size: 2em; }
+      h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      font-size: 70%;
+      }
+      .small{
+      font-size: 70%;
+      }
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(249, 38, 114);
+        text-decoration: none;
+      }
+      code {
+        -moz-border-radius: 5px;
+        -web-border-radius: 5px;
+        background: #e7e8e2;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      .licorne{
+      background: #FFF0F5; /*LavenderBlush*/
+      }
+
+      .licorne h1{
+      background: transparent url("http://plancq.clement.free.fr/img/licorne.png") no-repeat;
+      padding-left: 80px;
+      color: #8A2BE2;
+      }
+      
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 50%;
+        height: 92%;
+        float: left;
+      }
+      .left-column-black {
+        color: #000;
+        width: 50%;
+        height: 92%;
+        float: left;
+      }
+
+      .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 45%;
+        float: right;
+        padding-top: 1em;
+      }
+    </style>  
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle, inverse
+
+# Langages de script - Python
+## 12 octobre 2016 - fonctions, exceptions, logs
+### M2 Ingénierie Multilingue - INaLCO
+#### Clément Plancq - <small>clement.plancq@ens.fr</small>
+
+---
+# Fonctions
+
+* Une fonction porte un nom, reçoit des arguments, opére un traitement et renvoie une valeur de retour
+
+* Une fonction *doit* être documentée. En Python on utilise les *docstrings*
+
+```python3
+def ma_fonction(arg1, arg2):
+    """ La documentation de ma fonction
+    Sur plusieurs lignes si je veux
+    """
+    return ()
+```
+
+* Les *docstrings* sont accessibles dans la console avec `help(ma_fonction)` ou dans le script via l'attribut `__doc__`: `ma_fonction.__doc__`
+
+* Les générateurs de documentation comme [sphinx](http://www.sphinx-doc.org/) utilisent les *docstrings*
+
+---
+# Fonctions : arguments
+
+* Arguments positionnels
+
+```python3
+def retranche(arg1, arg2):
+    """Une soustraction quoi"""
+    return (arg1 - arg2)
+
+retranche(4, 2)
+2
+retranche(2, 4)
+-2
+```
+
+
+* Keywords arguments
+
+```python3
+def retranche(arg1=0, arg2=0):
+    """Une soustraction quoi"""
+    return (arg1 - arg2)
+
+retranche(arg2=2, arg1=4)
+2
+retranche(arg2=2)
+-2
+
+```
+
+* On peut mélanger les deux types d'arguments mais alors les keywords doivent être en dernier
+
+---
+# Fonctions : arguments
+
+* Nombre d'arguments arbitraire
+
+```python3
+def print_artist(name, *records):
+    print(name)
+    for item in records:
+        print(item)
+
+print_artist("Neil Young", "Ragged Glory", "Harvest Moon")
+```
+
+* On peut aussi utiliser des *kwargs* (keyword arguments)
+
+```python3
+def print_artist(name, *records, **concerts):
+    print(name)
+    for item in records:
+        print(item)
+    for place, date in concerts.items():
+        print(place, date)
+
+print_artist("Neil Young", "Ragged Glory", "Harvest Moon", Paris='12/10/2016', Albuquerque="14/11/2016")
+
+```
+---
+# Fonctions : portée des variables
+
+* Les variables déclarées dans le corps d'une fonction ont une portée locale à la fonction
+
+* Les variables globales (c-a-d dans le *main*) sont accessibles en lecture dans une fonction
+
+* Pour modifier une variable globale dans une fonction il faut la faire précéder du mot cle `global`    
+  Souvent source de bug, à éviter
+
+* Les variables passées en arguments ne sont pas modifiées par la fonction
+
+---
+class: licorne
+# Attention !
+## Argument *mutable*
+
+* Les arguments de type *mutable* (list, dictionnaire) peuvent être modifiés par la fonction
+
+```python3
+def ma_fonction(val, list):
+    list.append(val)
+    return list
+
+list = [1, 2, 3]
+ma_fonction(4, list)
+[1, 2, 3, 4]
+ma_fonction(4, list)
+[1, 2, 3, 4, 4]
+```
+
+* Si ce n'est pas le comportement voulu il faut penser à faire une copie de la liste
+
+```python3
+list = [1, 2, 3]
+ma_fonction(4, list[:])
+```
+
+---
+
+# Exceptions
+
+* Les exceptions sont utilisées pour signaler que quelque chose d'anormal se produit, une erreur généralement
+
+* Les messages d'erreur générés par les exceptions donnent des détails précieux sur les erreurs (type, emplacement, ...)
+
+* Si elles sont levées par Python vous pouvez capturer les exceptions (`try`, `except`) et modifier le comportement de votre script en fonction
+
+* Vous pouvez également lever des exceptions avec `raise`
+
+```python3
+if user_val not in chifoumi:
+    raise ValueError("pierre, feuille ou ciseaux et puis c'est tout")
+```
+---
+# Capturer les exceptions
+
+* Trop facile
+
+```python3
+val = [1, 2 ,3]
+try:
+  print(val[1984])
+except IndexError:
+  print("Erreur d'indice. Mais le roman est bien")
+```
+
+* À condition de sélectionner la bonne classe d'exception
+
+```python3
+dico = {'michel': 'H', 'michèle': F}
+try:
+  print(val[1984])
+except IndexError:
+  print("Erreur d'indice. Mais le roman est bien")
+KeyError: 1984
+```
+* Les exceptions Python sont organisées en hiérarchie (voir [ici](https://docs.python.org/3/library/exceptions.html#bltin-exceptions)), on finit par s'y retrouver
+
+
+---
+# Capturer les exceptions
+
+* Utiliser la classe mère `Exception` réduit la précision de l'information sur l'erreur produite
+
+```python3
+try:
+  print(dico[list[5]])
+except Exception:
+  print("Soit la clé n'existe pas, soit l'indice n'existe pas")
+```
+
+* Il est possible de capturer plusieurs types d'exceptions différentes
+
+```python3
+try:
+  print(dico[list[5]])
+except IndexError:
+  print("L'indice n'existe pas")
+except KeyError:
+  print("La clé n'existe pas")
+```
+---
+# Pour finir sur les exceptions
+
+* Le bloc `else` sera exécuté si aucune exception n'est levée
+
+* Le bloc `finally` sera exécuté dans tous les cas de figure
+
+```python3
+try:
+  print(dico[list[5]])
+except IndexError:
+  print("L'indice n'existe pas")
+except KeyError:
+  print("La clé n'existe pas")
+else:
+  print("OK tout roule")
+finally:
+  print("C'est fini, vous pouvez rentrer")
+```
+
+---
+# Logs
+
+On peut toujours générer des logs manuellement à coups de `if` et de `print` mais ça devient vite fastidieux
+
+Python embarque un module qui est fait pour ça : [`logging`](https://docs.python.org/3/howto/logging.html)
+
+```python3
+import logging
+
+logging.basicConfig(filename='monscript.log',level=logging.INFO)
+logging.debug('Celui-là ne sera pas dans les logs')
+logging.info('Celui-là oui, nananèreuh')
+```
+
+
+
+---
+# Module argparse
+
+* [`sys.argv`](https://docs.python.org/3.6/library/sys.html#sys.argv) permet de récupérer la liste des arguments passés à un script Python
+
+* Le module [`argparse`](https://docs.python.org/3.6/library/argparse.html) est un parseur qui vous permettra de construire des interfaces en ligne de commande plus riches et plus simples à utiliser.  
+Commencer avec le [tutorial](https://docs.python.org/3.6/howto/argparse.html#id1)
+
+```python3
+import argparse
+
+parser = argparse.ArgumentParser(description="A useless script")
+parser.add_argument("-v", "--verbose", help="verbose mode", action="store_true")
+parser.add_argument("file", help="input file")
+args = parser.parse_args()
+```
+
+```bash
+> python3 args.py
+usage: args.py [-h] [-v] file
+args.py: error: the following arguments are required: file
+
+```
+---
+# Pas de *main* en Python ?
+
+Vous trouverez fréquemment le test suivant dans les scripts Python :
+
+```python3
+if __name__ == '__main__':
+    instruction1
+    instruction2
+
+```
+
+ou 
+
+```python3
+def main:
+    instruction
+
+if __name__ == '__main__':
+    main()
+```
+
+Cela évite que le code sous le test ne soit exécuté lors de l'import du script :      
+`__name__` est une variable créée automatiquement qui vaut `__main__` si le script a été appelé en ligne de commande, le nom du script s'il a été importé
+
+Accessoirement cela permet d'organiser son code et de le rendre plus lisible    
+Désormais je vous ~~recommande vivement~~ demande de l'inclure dans tous vos scripts
+
+---
+
+# Exos pour le 25 octobre
+
+Vous rendrez des scripts Python3. Avec des commentaires c'est mieux.      
+      
+1. Vocabulaire commun
+2. Dictionnaire de rimes avec POS
+3. Résoudre [there is no spoon](https://www.codingame.com/training/medium/there-is-no-spoon-episode-1)
+      
+    </textarea>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
