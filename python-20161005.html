@@ -225,6 +225,35 @@ Vous *devez* lire attentivement et vous référer à la documentation officelle 
 ```
 
 ---
+class: licorne
+# Attention !
+## Copie de liste
+
+Dans `y = x` `y` n'est pas un copie de `x`, les deux pointent vers le même objet
+
+```python3
+>>> x = [1, 2, 3]
+>>> y = x
+>>> y[0] = 4
+>>> x
+[4, 2, 3]
+```
+
+Pour copier une liste il faut utiliser
+
+```python3
+>>> x = [1, 2, 3]
+>>> y = x[:]
+```
+
+ou
+
+```python3
+>>> x = [1, 2, 3]
+>>> y = list(x)
+```
+
+---
 # Les tuples
 
 * Les tuples (`tuple`) sont des *sequences* similaires aux listes sauf qu'elles ne peuvent pas être modifiées (*immutable*)
@@ -258,6 +287,38 @@ Vous *devez* lire attentivement et vous référer à la documentation officelle 
 ...
 ```
 ---
+class: licorne
+# Attention !
+## Tuple à 1 élément
+
+Pour créer un tuple à un élément il faut utiliser la notation `(elem, )`
+
+```python3
+>>> var = (1)
+>>> type(var)
+int
+>>> var = (1, )
+>>> type(var)
+tuple
+```
+
+---
+# Parcours de liste
+
+La boucle `for` est particulièrement adaptée pour parcourir les *iterables* et donc les listes
+```python3
+>>> for item in list:
+...     print(item)
+```
+
+La fonction `enumerate` peut être utile dans certains cas, elle renvoie un tuple contenant l'indice et la valeur de l'item à l'indice concerné
+```python3
+>>> for i, tem in enumerate(list):
+...     print(i, item)
+```
+
+---
+
 # Les ensembles
 
 * Les ensembles (`set`) sont des collections non ordonnées d'élements sans doublons
@@ -330,6 +391,18 @@ Counter({'guépard': 1, 'le': 2, 'poursuit': 1})
 ```
 
 ---
+class: licorne
+# Help !
+## Fonction `repr`
+
+Dans la console Python les structures de données s'affichent de façon lisible
+
+`print(obj)` ne donnera pas toujours le résultat escompté
+
+La fonction `repr(obj)` est à préférer, elle donne une "représentation textuelle" d'un objet
+
+---
+
 
 # Exos pour le 12 octobre
 
