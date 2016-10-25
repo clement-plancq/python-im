@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Python - 25/10/2016</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+      @import url(http://fonts.googleapis.com/css?family=Droid+Serif);
+      @import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+
+      body {
+        font-family: 'Droid Serif';
+        font-size: 20px;
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+      h1 { font-size: 4em; }
+      h2 { font-size: 2em; }
+      h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      font-size: 70%;
+      }
+      .small{
+      font-size: 70%;
+      }
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(249, 38, 114);
+        text-decoration: none;
+      }
+      code {
+        -moz-border-radius: 5px;
+        -web-border-radius: 5px;
+        background: #e7e8e2;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      .licorne{
+      background: #FFF0F5; /*LavenderBlush*/
+      }
+
+      .licorne h1{
+      background: transparent url("http://plancq.clement.free.fr/img/licorne.png") no-repeat;
+      padding-left: 80px;
+      color: #8A2BE2;
+      }
+      
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 50%;
+        height: 92%;
+        float: left;
+      }
+      .left-column-black {
+        color: #000;
+        width: 50%;
+        height: 92%;
+        float: left;
+      }
+
+      .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 45%;
+        float: right;
+        padding-top: 1em;
+      }
+    </style>  
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle, inverse
+
+# Langages de script - Python
+## 25 octobre 2016 - modules re et timeit
+### M2 Ingénierie Multilingue - INaLCO
+#### Clément Plancq - <small>clement.plancq@ens.fr</small>
+
+---
+# Module timeit
+
+* `timeit` permet de mesurer le temps d'éxécution de portions de code ou de fonctions
+
+* La mesure du temps d'éxécution se fait en microseconde (*usec*), en milliseconde (*msec*) ou en secondes (*sec*)
+
+* Ce module s'utilise en ligne de commande, dans une console (i)python ou via des appels dans un script
+
+* Lors de l'appel en ligne de commande, le module détermine automatiquement le nombre de répétitions à réaliser
+
+```bash
+$ python3 -m timeit [x**2 for x in range(100)]
+10000 loops, best of 3: 38.7 usec per loop
+```
+
+
+---
+# Module timeit
+
+* La fonction la plus souvent utilisée est `timeit.timeit`
+
+* Ce n'est pas la seule, voir la [doc](https://docs.python.org/3.6/library/timeit.html)
+
+```python3
+import timeit
+
+def main():
+    time_char_in_str = timeit.timeit('str="le chat"; char="a"; char in str', number=10000)
+    print("Time char in str : {}".format(time_char_in_str))
+
+    time_find = timeit.timeit("""\
+str = "le chat"
+char="a"
+char.find(str)
+    """, number=10000)
+    print("Time find : {}".format(time_find))
+```
+
+---
+# Module timeit
+
+* Vous pouvez donner accès aux fonctions individuellement via le paramètre 'setup'
+
+* Le plus pratique est d'utiliser le paramètre `global=globals()` pour lui passer l'espace de nom du script
+
+
+```python3
+import timeit
+
+def f(n):
+    res = list()
+    for x in range(n):
+        res.append(x**2)
+    return res
+
+def g(n):
+    return [x**2 for x in range(n)]
+
+def main():
+    print(timeit.timeit('f(10)', globals=globals()))
+    print(timeit.timeit('g(10)', globals=globals()))
+
+```
+* Dans une console ipython vous  pouvez utiliser le mot clé magique `%timeit`
+
+---
+# Module re
+
+* `re` est un module particulièrement important, vous *devez* lire la [doc](https://docs.python.org/3/library/re.html), absolument
+
+* La doc officielle est parfois aride, ce [*howto*](https://docs.python.org/3.6/howto/regex.html) rédigé par A.M. Kuchling est plus digeste
+
+* *a minima* vous devez connaître les fonctions
+ * `compile` : compilation d'un motif (*pattern*), retourne un objet Pattern 
+ * `findall` : trouve *toutes* les occurences du motif, retourne une liste de chaînes trouvées
+ * `search` : trouve le motif, retourne un objet Match, None sinon
+ * `match` : détermine si le motif est présent au début de la chaîne, retourne un objet Match, None sinon
+ * `split` : découpe une chaîne selon un motif, retourne une liste de chaînes
+ * `sub` : remplace les occurences d'un motif par une chaîne de remplacement
+
+---
+# Module re
+
+* Avec compilation du motif
+
+```python3
+pat = re.compile("(\w|\s)+")
+if pat.search("Un léopard me pourchasse"):
+    print("Cours !")
+```
+
+* Sans compilation
+
+```python3
+if re.search("(\w|\s)+", "Un léopard me pourchasse"):
+    print("Cours !")
+```
+
+---
+class: licorne
+# Module re
+## \w et Python3
+
+`\w` est la classe prédéfinie des caractères alaphanumériques.
+
+En Python2 `\w` correspond à [A-Za-z0-9_], avec les locales il est possible d'y ajouter d'autres caractères
+
+En Python3 `\w` correspond à tous les caractères qui ont la propriété Unicode Letter d'après le module `unicodedata` (sauf si le motif est compilé en binaire ou si l'option `re.ASCII` est activée)
+
+```python3
+if re.search("(\w|\s)+", "馬青區團長成中央代表"):
+    print("Yeah !")
+if re.search("(\w|\s)+", "هيلاري كلينتون"):
+    print("Yeah !")
+
+```
+
+---
+# Module re
+
+* Les fonctions `match` et `search` renvoient un objet `Match`
+
+* L'objet est évalué comme True s'il est testé mais il peut livrer plus d'informations
+ * `m.group()` la chaîne trouvée (*matchée*)
+ * `m.start()` l'indice de la position initiale de la chaîne 
+ * `m.end()` l'indice de la position finale de la chaîne 
+ * `m.span()` le tuple indice début, fin de la chaîne
+
+```python3
+m = re.search("l[ae]s?", "Après la pluie, le beau temps")
+m.group()
+>>> 'la'
+```
+
+* Si le motif comporte des groupes de capture :
+ * `m.group(1)` renvoie la chaîne correspond au 1er groupe, etc.
+ * `m.groups()` renvoie un tuple comportant autant d'éléments qu'il y a de groupes
+
+```python3
+ m = re.search("(l[ae]s?)\s(\w+)", "Après la pluie, le beau temps")
+ m.groups()
+ >>> ('la', 'pluie')
+```
+
+---
+# Module re
+
+1. Trouver dans le fichier d'export csv de lexique.org les noms se terminant par '-ure'
+
+2. À l'aide du module `urllib` trouver les liens hypertextes présents dans la page [https://www.reddit.com/r/Python/](https://www.reddit.com/r/Python/).
+
+3. Parser le fichier brise-marine-pos.txt à l'aide de regex
+
+    </textarea>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
