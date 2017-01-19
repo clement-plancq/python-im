@@ -1,0 +1,112 @@
+body{
+	background-color: #DADADA;
+	display: flex;
+	flex-direction: column;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+#entete{
+	background-color: #4E4E4D;
+	box-shadow: 0 0 10px grey;
+	position: fixed;
+	padding:15px;
+	margin-top: -10px;
+	margin-left: -10px;
+	width: 100%;
+	display:flex;
+	justify-content: space-around;
+}
+
+#titre{
+		align-self: center;
+		color:white;
+		font-weight: bold;
+		font-size: 40px;
+}
+form{
+	align-self: center;
+}
+
+.data{
+	margin-top: 100px;
+	display: flex;
+	justify-content: space-around;
+}
+.cat{
+	color: #EFEFEF;
+	font-weight: bold;
+	padding: 15px;
+	border-bottom: dotted;
+	border-color: white;
+	text-align: center;
+	margin-bottom: 5px;
+}
+.tab{
+	width: 32%;
+	border-radius: 2px 2px 2px 2px;
+	box-shadow: 0 0 10px black;
+}
+
+.structure{
+
+	padding: 10px;
+	color: #FFFFFF;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.structure:hover {
+	box-shadow: 0 0 10px black;
+}
+.structure:target{
+	box-shadow: 0 0 10px black;
+	padding: 10px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+
+.exemples{
+	max-height: 500px;
+	overflow: auto;
+	scrollbar-face-color:#999999;
+    scrollbar-arrow-color: #FFFFFF;
+    scrollbar-track-color: #FFFFFF;
+    scrollbar-highlight-color: #999999;
+    scrollbar-darkshadow-color: #FFFFFF;
+    scrollbar-shadow-color: #999999;
+    scrollbar-3dlight-color: #999999;
+}
+#total {
+	background-color: #FF7B00;
+}
+#partitif{
+	background-color: #45A6D3;
+}
+#mixte{
+	background-color: #5AB555;
+}
+
+.item_liste{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.bouton{
+	text-align: right;
+	font-size: 10px;
+	cursor: pointer;
+}
+.bouton:hover{
+	text-decoration: underline;
+}
+.sp{
+	color: #000000;
+	margin: 2px;
+}
+.exemple{
+	margin-left: 25px;
+}
+.phrase{
+	font-size: 12px;
+	padding-bottom: 3px;
+}

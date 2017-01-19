@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script
+       src="http://code.jquery.com/jquery-3.1.1.min.js"
+       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+       crossorigin="anonymous"></script>
+    <script type="text/javascript" src="versancre.js"></script>
+    <script type="text/javascript" src="flipflop.js"></script>
+    <!--<script type="text/javascript" src="popup.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300" rel="stylesheet">
+  </head>
+  <body>
+    <div id="entete">
+      <div id="titre">Répartition des verbes selon leur objet : partitif vs. total </div>
+      <form onSubmit="return allerVersAncre();">
+	<input id="requete" type="text" placeholder="Entrez un verbe..."/>
+	<input type="submit" id="envoi" value="Chercher"/>
+      </form>
+    </div>
+    <div class="data">
+      <div class="tab" id="total">
+	<div class="cat">OBJET TOTAL</div>
+	<div class="structure" id='keskittää'>
+	  <div class="item_liste">
+	    <div class="lemme" > &#9656; keskittää</div>
+	    <div class="score"> 84.16 % </div>
+	  </div>
+	  <div id='boutonkeskittää' class="bouton" onclick="flipflopON('contenukeskittää','boutonkeskittää');">voir les exemples (215)</div>
+	  <section id='contenukeskittää' style="display:none">
+	    <div class="bouton" id='boutonkeskittää' onclick="flipflopOFF('boutonkeskittää','contenukeskittää');">masquer les exemples (215)</div>
+	    <div class="exemples">		
+	      <div class="exemple">
+		<div class="sp"> keskittää + keskustelu (Nom
+		  )</div>
+		<div class="phrase">Olisi siis virhe keskittää Euroopan parlamentin vuoden 2001 talousarviota koskeva keskustelu pelkästään tähän kysymykseen. </div>
+	      </div>
+	      
+	      <div class="exemple">
+		<div class="sp"> keskittää + kaikki (Nom
+		  )</div>
+		<div class="phrase">Keskititte kaikki tietenkin puheenvuoronne rauhanprosessiin ja neuvotteluihin, jotka ovat epäilemättä edistymisen avaintekijöitä tällä Lähi-idän alueella. </div>
+	      </div>
+	      
+	      <div class="exemple">
+		<div class="sp"> keskittää + puheen#vuoro (Nom
+		  )</div>
+		<div class="phrase">Keskititte kaikki tietenkin puheenvuoronne rauhanprosessiin ja neuvotteluihin, jotka ovat epäilemättä edistymisen avaintekijöitä tällä Lähi-idän alueella. </div>
+	      </div>
+	      
+	      <div class="exemple">
+		<div class="sp"> keskittää + huomio (Gen
+		  )</div>
+		<div class="phrase">( EN ) Vuonna 1997 yhden Renaultin 3200 työntekijän tehtaan sulkeminen Brysselin lähellä keskitti yleisön huomion teollisen muutoksen negatiivisiin seurauksiin. </div>
+	      </div>
+	      
+	      
+	    </div>		
+	  </section>
+	</div>
+	
+	<div class="structure" id='pilata'>
+	  <div class="item_liste">
+	    <div class="lemme" > &#9656; pilata</div>
+	    <div class="score"> 82.09 % </div>
+	  </div>
+	  <div id='boutonpilata' class="bouton" onclick="flipflopON('contenupilata','boutonpilata');">voir les exemples (85)</div>
+	  <section id='contenupilata' style="display:none">
+	    <div class="bouton" id='boutonpilata' onclick="flipflopOFF('boutonpilata','contenupilata');">masquer les exemples (85)</div>
+	    <div class="exemples">		
+	      <div class="exemple">
+		<div class="sp"> pilata + ilo (Gen
+		  )</div>
+		<div class="phrase">Älkää olko niin inhottava, että pilaatte heidän ilonsa. </div>
+	      </div>
+	      
+	      <div class="exemple">
+		<div class="sp"> pilata + maku (Gen
+		  )</div>
+		<div class="phrase">Muiden rasvojen lisääminen pilaa sen maun. </div>
+	      </div>
+	      
+	      <div class="exemple">
+		<div class="sp"> pilata + osa (Gen
+		  )</div>
+		<div class="phrase">Ne pilaisivat todellakin osan tehdyistä luetteloista ja vaikeuttaisivat asioita. </div>
+	      </div>
+	      
+	      <div class="exemple">
+		<div class="sp"> pilata + toiminta (Gen
+		  )</div>
+		<div class="phrase">Arvoisa puhemies, aivan kuten monet muut kollegani ovat sanoneet, yksi kaikkein huolestuttavimmista väkivallan piirteistä Göteborgissa on se, että se pilasi monen sellaisen ihmisen toiminnan, joka oli paikalla osoittaakseen rauhanomaisesti mieltään saadakseen aidot huolenaiheensa hallitusten johtajien tietoon.
+		</div>
+	      </div>
+	      
+	      <div class="exemple">
+		<div class="sp"> pilata + mielen#osoitus (Gen
+		  )</div>
+		<div class="phrase">Väkivalta pilaa kuitenkin minkä tahansa mielenosoituksen, jopa sellaisen, joka on pidetty hyvässä tarkoituksessa. </div>
+	      </div>
+	      
+	      
+	    </div>		
+	  </section>
+	</div>
+      </div>
+      <div class="tab" id="partitif">
+	<div class="cat">OBJET PARTITIF</div>
+	<div class="structure" id="huijata">
+	  <div class="item_liste">
+	    <div class="lemme"> ▸ huijata</div>
+	    <div class="score"> 96.55 % </div>
+	  </div>
+	  <div id="boutonhuijata" class="bouton" onclick="flipflopON('contenuhuijata','boutonhuijata');">voir les exemples (37)</div>
+	  <section id="contenuhuijata" style="display:none">
+	    <div class="bouton" id="boutonhuijata" onclick="flipflopOFF('boutonhuijata','contenuhuijata');">masquer les exemples (37)</div>
+	    <div class="exemples">		
+	      <div class="exemple">
+		<div class="sp"> huijata + unioni (Par
+		  )</div>
+		<div class="phrase">Arvoisa puhemies, ammattimaiset petosten tekijät huijaavat edelleen unionia, ja aivan liian monimutkainen arvonlisäverojärjestelmä valitettavasti suosii sitä. </div>
+	      </div>
+	      
+	      <div class="exemple">
+		<div class="sp"> huijata + minä (Par
+		  )</div>
+		<div class="phrase">Toiseksi mahdollisissa sopimuksissa on määrättävä erittäin tiukoista ja kattavista valvontatoimista, joilla estetään se, että Pohjois-Korea huijaa meitä jälleen. </div>
+	      </div>
+	      
+	      <div class="exemple">
+		<div class="sp"> huijata + minä (Par
+		  )</div>
+		<div class="phrase">Te huijaatte minua. </div>
+	      </div>
+	      
+	      <div class="exemple">
+		<div class="sp"> huijata + kansa#lainen (Par
+		  )</div>
+		<div class="phrase">Tällä tavoin ne huijaavat kansalaisia. </div>
+	      </div>
+	    </div>    
+	  </section>
+	</div>
+	<div class="structure" id="uhata">
+	  <div class="item_liste">
+	    <div class="lemme"> ▸ uhata</div>
+	    <div class="score"> 91.19 % </div>
+	  </div>
+	  <div id="boutonuhata" class="bouton" onclick="flipflopON('contenuuhata','boutonuhata');">voir les exemples (1739)</div>
+	  <section id="contenuuhata" style="display:none">
+	    <div class="bouton" id="boutonuhata" onclick="flipflopOFF('boutonuhata','contenuuhata');">masquer les exemples (1739)</div>
+	    <div class="exemples">		
+	      <div class="exemple">
+		<div class="sp"> uhata + se (Par
+		  )</div>
+		<div class="phrase">Sitä ei kuitenkaan uhkaa Eurooppa. </div>
+	      </div>
+	      
+	      <div class="exemple">
+		<div class="sp"> uhata + kansan#terveys (Par
+		  )</div>
+		<div class="phrase">Olemme päässeet niin pitkälle, että tiedämme, että antibioottien resistenssi uhkaa kansanterveyttä, erityisesti pikkulapsia. </div>
+	      </div>
+	    </div>
+	  </section>
+	</div>
+	</div>
+
+      <div class="tab" id="mixte">
+	<div class="cat">OBJET MIXTE</div>
+	<div class="structure" id="osallistua">
+	  <div class="item_liste">
+	    <div class="lemme"> ▸ osallistua</div>
+	    <div class="score"> T : 51.33 % ; P : 48.67 %</div>
+	  </div>
+	  <div id="boutonosallistua" class="bouton" onclick="flipflopON('contenuosallistua','boutonosallistua');">voir les exemples (3128)</div>
+	  <section id="contenuosallistua" style="display:none">
+	    <div class="bouton" id="boutonosallistua" onclick="flipflopOFF('boutonosallistua','contenuosallistua');">masquer les exemples (3128)</div>
+	    
+	    <div class="exemple">
+	      <div class="sp"> osallistua + ministeri (Gen
+		)</div>
+	      <div class="phrase">Meidän on varmistettava, että Ecofiniin osallistuvat ministerimme ja työministerimme myöntävät, että sosiaaliasioista vastaavilla ministereillä on annettavaa sellaisen yhteiskunnan perustamiseksi Eurooppaan, jolle on ominaista luovuus, aloitteellisuus ja se, että kaikille kansalaisillemme tarjotaan korkea elämänlaatu. </div>
+	    </div>
+	    
+	    <div class="exemple">
+	      <div class="sp"> osallistua + toimi#elin (Gen
+		)</div>
+	      <div class="phrase">Osallistumme tällä tavoin eräällä tavalla myös sen toimielimen, joka on ehdottomasti kaikkein vahvimmin integraatiota edistävä ja kaikkein federalistisin toimielin, eli komission toimivallan vahvistamiseen, jotta vaikka neuvosto ei sitä myönnäkään tietyt hallinnot voitaisiin vakiinnuttaa ja vapauttaa varoja muihin toimintoihin. </div>
+	    </div>
+	    
+	    <div class="exemple">
+	      <div class="sp"> osallistua + kokous (Nom
+		)</div>
+	      <div class="phrase">Osallistuin kuitenkin tänään kalatalousvaliokunnan kokoukseen se on ylimääräinen kokous ja tätä asiaa tullaan varmasti kysymään siellä. </div>
+	    </div>
+	  </section>
+	  
+	</div>
+	<div class="structure" id="kulkea">
+	  <div class="item_liste">
+	    <div class="lemme"> ▸ kulkea</div>
+	    <div class="score"> T : 59.72 % ; P : 40.28 %</div>
+	  </div>
+	  <div id="boutonkulkea" class="bouton" onclick="flipflopON('contenukulkea','boutonkulkea');">voir les exemples (812)</div>
+	  <section id="contenukulkea" style="display:none">
+	    <div class="bouton" id="boutonkulkea" onclick="flipflopOFF('boutonkulkea','contenukulkea');">masquer les exemples (812)</div>
+	    
+	    <div class="exemple">
+	      <div class="sp"> kulkea + luulla (Par
+		)</div>
+	      <div class="phrase">Tämä prosessi kulkisi sitä paitsi vielä paljon luultua pidemmälle, sillä kaikenlaiset kerjääjät ja vähemmistöt ovat alkaneet näyttäytyä, koska he ymmärtävät hyvin, että jos perusoikeuskirja on yhtenäinen ja sitova ja jos se on lisäksi hyväksytty niin sanotun eurooppalaisen demokratian epäilyttävissä oloissa, se voisi tulevina vuosina olla demokraattisen ketjun heikko rengas. </div>
+	    </div>
+	    
+	    <div class="exemple">
+	      <div class="sp"> kulkea + ajo#neuvo (Par
+		)</div>
+	      <div class="phrase">Brennerin solan kautta kulkee nykyään vuosittain 1, 2 miljoonaa raskasta ajoneuvoa. </div>
+	    </div>
+	    
+	    <div class="exemple">
+	      <div class="sp"> kulkea + työmatkalainen (Par
+		)</div>
+	      <div class="phrase">Tällä reitillä kulkee työmatkalaisia luoteesta päin, ja siihen kuuluu osa Irlannin tasavallasta sekä sisemmistä rannoista ja niemestä. </div>
+	    </div>
+	    
+	    <div class="exemple">
+	      <div class="sp"> kulkea + juna (Par
+		)</div>
+	      <div class="phrase">Euroopassa kulkee yhä junia, mutta niiden vaunuissa on yhä vähemmän rahtitavaraa, emmekä voi hyväksyä sellaista asiaintilaa. </div>
+	    </div>
+	    
+	    <div class="exemple">
+	      <div class="sp"> kulkea + käsi (Nom
+		)</div>
+	      <div class="phrase">Hyvä ympäristön laatu ja hyvä terveys kulkevat käsi kädessä. </div>
+	    </div>
+	</section>
+	</div>
+      </div>
+  </body>
+</html>
