@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 ## exo devinette
-## 21/09/2016
 
 import random
 import sys
