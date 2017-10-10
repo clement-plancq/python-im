@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Python - 12/10/2016</title>
+    <title>Python - Cours 5</title>
     <meta charset="utf-8">
     <style type="text/css">
       @import url(http://fonts.googleapis.com/css?family=Droid+Serif);
@@ -144,126 +144,9 @@
 class: center, middle, inverse
 
 # Langages de script - Python
-## 12 octobre 2016 - fonctions, exceptions, logs
+## Cours 5 - exceptions, logs, modules timeit et argparse
 ### M2 Ingénierie Multilingue - INaLCO
 #### Clément Plancq - <small>clement.plancq@ens.fr</small>
-
----
-# Fonctions
-
-* Une fonction porte un nom, reçoit des arguments, opére un traitement et renvoie une valeur de retour
-
-* Une fonction *doit* être documentée. En Python on utilise les *docstrings*
-
-```python3
-def ma_fonction(arg1, arg2):
-    """ La documentation de ma fonction
-    Sur plusieurs lignes si je veux
-    """
-    return ()
-```
-
-* Les *docstrings* sont accessibles dans la console avec `help(ma_fonction)` ou dans le script via l'attribut `__doc__`: `ma_fonction.__doc__`
-
-* Les générateurs de documentation comme [sphinx](http://www.sphinx-doc.org/) utilisent les *docstrings*
-
----
-# Fonctions : arguments
-
-* Arguments positionnels
-
-```python3
-def retranche(arg1, arg2):
-    """Une soustraction quoi"""
-    return (arg1 - arg2)
-
-retranche(4, 2)
-2
-retranche(2, 4)
--2
-```
-
-
-* Keywords arguments
-
-```python3
-def retranche(arg1=0, arg2=0):
-    """Une soustraction quoi"""
-    return (arg1 - arg2)
-
-retranche(arg2=2, arg1=4)
-2
-retranche(arg2=2)
--2
-
-```
-
-* On peut mélanger les deux types d'arguments mais alors les keywords doivent être en dernier
-
----
-# Fonctions : arguments
-
-* Nombre d'arguments arbitraire
-
-```python3
-def print_artist(name, *records):
-    print(name)
-    for item in records:
-        print(item)
-
-print_artist("Neil Young", "Ragged Glory", "Harvest Moon")
-```
-
-* On peut aussi utiliser des *kwargs* (keyword arguments)
-
-```python3
-def print_artist(name, *records, **concerts):
-    print(name)
-    for item in records:
-        print(item)
-    for place, date in concerts.items():
-        print(place, date)
-
-print_artist("Neil Young", "Ragged Glory", "Harvest Moon", Paris='12/10/2016', Albuquerque="14/11/2016")
-
-```
----
-# Fonctions : portée des variables
-
-* Les variables déclarées dans le corps d'une fonction ont une portée locale à la fonction
-
-* Les variables globales (c-a-d dans le *main*) sont accessibles en lecture dans une fonction
-
-* Pour modifier une variable globale dans une fonction il faut la faire précéder du mot cle `global`    
-  Souvent source de bug, à éviter
-
-* Les variables passées en arguments ne sont pas modifiées par la fonction
-
----
-class: licorne
-# Attention !
-## Argument *mutable*
-
-* Les arguments de type *mutable* (list, dictionnaire) peuvent être modifiés par la fonction
-
-```python3
-def ma_fonction(val, list):
-    list.append(val)
-    return list
-
-list = [1, 2, 3]
-ma_fonction(4, list)
-[1, 2, 3, 4]
-ma_fonction(4, list)
-[1, 2, 3, 4, 4]
-```
-
-* Si ce n'est pas le comportement voulu il faut penser à faire une copie de la liste
-
-```python3
-list = [1, 2, 3]
-ma_fonction(4, list[:])
-```
 
 ---
 
@@ -361,10 +244,72 @@ import logging
 
 logging.basicConfig(filename='monscript.log',level=logging.INFO)
 logging.debug('Celui-là ne sera pas dans les logs')
-logging.info('Celui-là oui, nananèreuh')
+logging.info('Celui-là oui')
+```
+# Module timeit
+
+* `timeit` permet de mesurer le temps d'éxécution de portions de code ou de fonctions
+
+* La mesure du temps d'éxécution se fait en microseconde (*usec*), en milliseconde (*msec*) ou en secondes (*sec*)
+
+* Ce module s'utilise en ligne de commande, dans une console (i)python ou via des appels dans un script
+
+* Lors de l'appel en ligne de commande, le module détermine automatiquement le nombre de répétitions à réaliser
+
+```bash
+$ python3 -m timeit [x**2 for x in range(100)]
+10000 loops, best of 3: 38.7 usec per loop
 ```
 
 
+---
+# Module timeit
+
+* La fonction la plus souvent utilisée est `timeit.timeit`
+
+* Ce n'est pas la seule, voir la [doc](https://docs.python.org/3.6/library/timeit.html)
+
+```python3
+import timeit
+
+def main():
+    time_char_in_str = timeit.timeit('str="le chat"; char="a"; char in str', number=10000)
+    print("Time char in str : {}".format(time_char_in_str))
+
+    time_find = timeit.timeit("""\
+str = "le chat"
+char="a"
+char.find(str)
+    """, number=10000)
+    print("Time find : {}".format(time_find))
+```
+
+---
+# Module timeit
+
+* Vous pouvez donner accès aux fonctions individuellement via le paramètre 'setup'
+
+* Le plus pratique est d'utiliser le paramètre `global=globals()` pour lui passer l'espace de nom du script
+
+
+```python3
+import timeit
+
+def f(n):
+    res = list()
+    for x in range(n):
+        res.append(x**2)
+    return res
+
+def g(n):
+    return [x**2 for x in range(n)]
+
+def main():
+    print(timeit.timeit('f(10)', globals=globals()))
+    print(timeit.timeit('g(10)', globals=globals()))
+
+```
+* Dans une console ipython vous  pouvez utiliser le mot clé magique `%timeit`
 
 ---
 # Module argparse
@@ -421,12 +366,8 @@ Désormais je vous ~~recommande vivement~~ demande de l'inclure dans tous vos sc
 
 ---
 
-# Exos pour le 25 octobre
+# Exos
 
-Vous rendrez des scripts Python3. Avec des commentaires c'est mieux.      
-      
-1. Vocabulaire commun
-2. Dictionnaire de rimes avec POS
 3. Résoudre [there is no spoon](https://www.codingame.com/training/medium/there-is-no-spoon-episode-1)
       
     </textarea>

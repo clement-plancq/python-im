@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Python - 25/10/2016</title>
+    <title>Python - Cours 4</title>
     <meta charset="utf-8">
     <style type="text/css">
       @import url(http://fonts.googleapis.com/css?family=Droid+Serif);
@@ -144,75 +144,148 @@
 class: center, middle, inverse
 
 # Langages de script - Python
-## 25 octobre 2016 - modules re et timeit
+## Cours 4 - Fonctions et module re
 ### M2 Ingénierie Multilingue - INaLCO
 #### Clément Plancq - <small>clement.plancq@ens.fr</small>
 
 ---
-# Module timeit
+# Fonctions
 
-* `timeit` permet de mesurer le temps d'éxécution de portions de code ou de fonctions
+* Une fonction porte un nom, reçoit des arguments, opére un traitement et renvoie une valeur de retour
 
-* La mesure du temps d'éxécution se fait en microseconde (*usec*), en milliseconde (*msec*) ou en secondes (*sec*)
-
-* Ce module s'utilise en ligne de commande, dans une console (i)python ou via des appels dans un script
-
-* Lors de l'appel en ligne de commande, le module détermine automatiquement le nombre de répétitions à réaliser
-
-```bash
-$ python3 -m timeit [x**2 for x in range(100)]
-10000 loops, best of 3: 38.7 usec per loop
-```
-
-
----
-# Module timeit
-
-* La fonction la plus souvent utilisée est `timeit.timeit`
-
-* Ce n'est pas la seule, voir la [doc](https://docs.python.org/3.6/library/timeit.html)
+* Une fonction *doit* être documentée. En Python on utilise les *docstrings*
 
 ```python3
-import timeit
+def ma_fonction(arg1, arg2):
+    """
+    La documentation de ma fonction
+    Sur plusieurs lignes si je veux
+    """
+    return ()
+```
 
-def main():
-    time_char_in_str = timeit.timeit('str="le chat"; char="a"; char in str', number=10000)
-    print("Time char in str : {}".format(time_char_in_str))
+* Les *docstrings* sont accessibles dans la console avec `help(ma_fonction)` ou dans le script via l'attribut `__doc__`: `ma_fonction.__doc__`
 
-    time_find = timeit.timeit("""\
-str = "le chat"
-char="a"
-char.find(str)
-    """, number=10000)
-    print("Time find : {}".format(time_find))
+* Les générateurs de documentation comme [sphinx](http://www.sphinx-doc.org/) utilisent les *docstrings*
+
+---
+# Fonctions : arguments
+
+* Arguments positionnels
+
+```python3
+def retranche(arg1, arg2):
+    """Une soustraction quoi"""
+    return (arg1 - arg2)
+
+retranche(4, 2)
+2
+retranche(2, 4)
+-2
+```
+
+
+* Arguments avec valeurs par défaut
+
+<small>Ici `arg1` est obligatoire, `arg2` est facultatif</small>
+
+```python3
+def retranche(arg1, arg2=1):
+    """Une soustraction quoi"""
+    return (arg1 - arg2)
+
+retranche(4, 1)
+3
+retranche(4)
+3
 ```
 
 ---
-# Module timeit
+# Fonctions : arguments
 
-* Vous pouvez donner accès aux fonctions individuellement via le paramètre 'setup'
+* Arguments nommés (*keywords arguments* aka *kwargs*)
 
-* Le plus pratique est d'utiliser le paramètre `global=globals()` pour lui passer l'espace de nom du script
-
+Les fonctions peuvent aussi être appelées avec des arguments nommés  
+Dans ce cas l'ordre n'a pas d'importance  
+On peut mélanger les deux types d'arguments mais alors les keywords doivent être en dernier  
 
 ```python3
-import timeit
+def retranche(arg1, arg2=1):
+    """Une soustraction quoi"""
+    return (arg1 - arg2)
 
-def f(n):
-    res = list()
-    for x in range(n):
-        res.append(x**2)
-    return res
+retranche(arg1=4, arg2=2)
+2
+retranche(arg2=2, arg1=4)
+2
+retranche(4, arg2=3)
+1
+```
 
-def g(n):
-    return [x**2 for x in range(n)]
+---
+# Fonctions : arguments
 
-def main():
-    print(timeit.timeit('f(10)', globals=globals()))
-    print(timeit.timeit('g(10)', globals=globals()))
+* Nombre d'arguments arbitraire
+
+```python3
+def print_artist(name, *records):
+    print(name)
+    for item in records:
+        print(item)
+
+print_artist("Neil Young", "Ragged Glory", "Harvest Moon")
+```
+
+* On peut aussi utiliser des *kwargs* (keyword arguments)
+
+```python3
+def print_artist(name, *records, **concerts):
+    print(name)
+    for item in records:
+        print(item)
+    for place, date in concerts.items():
+        print(place, date)
+
+print_artist("Neil Young", "Ragged Glory", "Harvest Moon", Paris='12/10/2016', Albuquerque="14/11/2016")
 
 ```
-* Dans une console ipython vous  pouvez utiliser le mot clé magique `%timeit`
+---
+# Fonctions : portée des variables
+
+* Les variables déclarées dans le corps d'une fonction ont une portée locale à la fonction
+
+* Les variables globales (c-a-d dans le *main*) sont accessibles en lecture dans une fonction
+
+* Pour modifier une variable globale dans une fonction il faut la faire précéder du mot cle `global`    
+  Souvent source de bug, à éviter
+
+* Les variables passées en arguments ne sont pas modifiées par la fonction
+
+---
+class: licorne
+# Attention !
+## Argument *mutable*
+
+* Les arguments de type *mutable* (list, dictionnaire) peuvent être modifiés par la fonction
+
+```python3
+def ma_fonction(val, list):
+    list.append(val)
+    return list
+
+list = [1, 2, 3]
+ma_fonction(4, list)
+[1, 2, 3, 4]
+ma_fonction(4, list)
+[1, 2, 3, 4, 4]
+```
+
+* Si ce n'est pas le comportement voulu il faut penser à faire une copie de la liste
+
+```python3
+list = [1, 2, 3]
+ma_fonction(4, list[:])
+```
 
 ---
 # Module re
@@ -222,7 +295,7 @@ def main():
 * La doc officielle est parfois aride, ce [*howto*](https://docs.python.org/3.6/howto/regex.html) rédigé par A.M. Kuchling est plus digeste
 
 * *a minima* vous devez connaître les fonctions
- * `compile` : compilation d'un motif (*pattern*), retourne un objet Pattern 
+ * `compile` : compilation d'un motif (*pattern*), retourne un objet `Pattern` 
  * `findall` : trouve *toutes* les occurences du motif, retourne une liste de chaînes trouvées
  * `search` : trouve le motif, retourne un objet Match, None sinon
  * `match` : détermine si le motif est présent au début de la chaîne, retourne un objet Match, None sinon
@@ -246,6 +319,16 @@ if pat.search("Un léopard me pourchasse"):
 if re.search("(\w|\s)+", "Un léopard me pourchasse"):
     print("Cours !")
 ```
+
+* `sub`
+
+```python3
+pat = re.compile('e|é')
+pat.sub('i', 'éléphanteau')
+
+>>> iliphantiau
+```
+
 
 ---
 class: licorne
@@ -296,11 +379,17 @@ m.group()
 ---
 # Module re
 
-1. Trouver dans le fichier d'export csv de lexique.org les noms se terminant par '-ure'
+1. Remplacer les articles 'le' ou 'Le' par 'un' dans la phrase : « Le soir est le moment de la journée où le jour touche à sa fin »
 
-2. À l'aide du module `urllib` trouver les liens hypertextes présents dans la page [https://www.reddit.com/r/Python/](https://www.reddit.com/r/Python/).
+2. Trouver dans le fichier d'export csv de lexique.org les noms dont le lemme se termine par '-ure'. Affichez la liste des formes : ortho / phon / lemme
 
-3. Parser le fichier brise-marine-pos.txt à l'aide de regex
+3. À l'aide du module `requests` trouver les liens hypertextes présents dans la page [https://www.reddit.com/r/Python/](https://www.reddit.com/r/Python/). Affichez la liste suivante : ancre: lien 
+
+---
+# Exos
+
+1. Codin Game : Racing duals (https://www.codingame.com/ide/puzzle/horse-racing-duals)
+
 
     </textarea>
     <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
