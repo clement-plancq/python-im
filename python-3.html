@@ -211,6 +211,7 @@ Vous *devez* lire attentivement et vous référer à la documentation officelle 
 * Elles permettent de définir des listes par filtrage ou opération sur les éléments d'une autre liste
 * Elles viennent de la programmation fonctionnelle
 * La [PEP 202](https://www.python.org/dev/peps/pep-0202/) conseille de préférer les listes en compréhension aux fonctions `map()` et `filter()`
+* Pas évident-évident de prime abord mais très expressif, élégant et *so pythonic*. Un dév python **doit** maîtriser les listes en compréhension
 
 
 ```python3
@@ -220,7 +221,7 @@ Vous *devez* lire attentivement et vous référer à la documentation officelle 
 >>> [i ** 2 for i in range(10) if i % 2 == 0]
 [0, 4, 16, 36, 64]
 
->>> [i, j for i in range(2) for j in ['a', 'b']]
+>>> [(i, j) for i in range(2) for j in ['a', 'b']]
  [(0, 'a'), (0, 'b'), (1, 'a'), (1, 'b')]
 ```
 
@@ -406,9 +407,10 @@ La fonction `repr(obj)` est à préférer, elle donne une "représentation textu
 
 Vous rendrez des scripts Python3. Avec des commentaires c'est mieux.      
       
-1. Finir dictionnaire de rimes
-2. Finir vocabulaire commun
-3. Résoudre [Mime types](https://www.codingame.com/training/easy/mime-type) sur CodinGame
+1. À partir du fichier tsv [`sem_Ef9POe.conll`](http://plancq.clement.free.fr/files/sem_Ef9POe.conll)
+  1. pour chaque POS listez les types classés par ordre d'occurrence décroissante,
+  2. pour chaque type de chunk indiquez les longueurs min et max (en nb de mots).
+2. Résoudre [Mime types](https://www.codingame.com/training/easy/mime-type) sur CodinGame
       
     </textarea>
     <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">

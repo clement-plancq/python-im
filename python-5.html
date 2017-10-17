@@ -246,6 +246,8 @@ logging.basicConfig(filename='monscript.log',level=logging.INFO)
 logging.debug('Celui-là ne sera pas dans les logs')
 logging.info('Celui-là oui')
 ```
+
+---
 # Module timeit
 
 * `timeit` permet de mesurer le temps d'éxécution de portions de code ou de fonctions
@@ -345,9 +347,7 @@ Vous trouverez fréquemment le test suivant dans les scripts Python :
 if __name__ == '__main__':
     instruction1
     instruction2
-
 ```
-
 ou 
 
 ```python3
@@ -359,7 +359,7 @@ if __name__ == '__main__':
 ```
 
 Cela évite que le code sous le test ne soit exécuté lors de l'import du script :      
-`__name__` est une variable créée automatiquement qui vaut `__main__` si le script a été appelé en ligne de commande, le nom du script s'il a été importé
+<small>`__name__` est une variable créée automatiquement qui vaut `__main__` si le script a été appelé en ligne de commande, le nom du script s'il a été importé.</small>
 
 Accessoirement cela permet d'organiser son code et de le rendre plus lisible    
 Désormais je vous ~~recommande vivement~~ demande de l'inclure dans tous vos scripts
@@ -368,7 +368,7 @@ Désormais je vous ~~recommande vivement~~ demande de l'inclure dans tous vos sc
 
 # Exos
 
-3. Résoudre [there is no spoon](https://www.codingame.com/training/medium/there-is-no-spoon-episode-1)
+3. Résoudre [Scrabble](https://www.codingame.com/training/medium/scrabble)
       
     </textarea>
     <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
