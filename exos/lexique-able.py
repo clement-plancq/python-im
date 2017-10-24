@@ -7,13 +7,11 @@
 
 import re
 
-data = "/home/clement/data/rsrc/lexique381/Lexique381.csv"
+data = "/data/rsrc/lexique381/Lexique381.csv"
 verbs = set()
 adjs_freq_able = set()
-adjs_freq_in_able = set()
 
 pat_able = re.compile("[aiu]ble$")
-pat_in_able = re.compile("^i[nmr].+[aiu]ble$")
 
 with open(data, 'r') as f:
     for line in f:
@@ -21,28 +19,24 @@ with open(data, 'r') as f:
         lemma, pos, freq = row[2], row[3], row[6]
         if pos == 'VER' and lemma[-2:] == 'er':
             verbs.add(lemma)
-        elif pos == 'ADJ':
-            if pat_in_able.search(lemma):
-                adjs_freq_in_able.add((lemma, freq))
-            elif pat_able.search(lemma):
+        elif pos == 'ADJ' and  pat_able.search(lemma):
                 adjs_freq_able.add((lemma, freq))
 
 
                 
 # Question 1
 list_ables = [lemma for lemma, freq in adjs_freq_able]
-list_in_ables = [lemma for lemma, freq in adjs_freq_in_able]
-cpt_able = len([verb for verb in verbs for adj in list_ables if re.match('{}[aiu]ble$'.format(verb[:-2]), adj)])
-cpt_able += len([verb for verb in verbs for adj in list_in_ables if re.match('^i[mnr]{}[aiu]ble$'.format(verb[:-2]), adj)])
+cpt_able = len([verb for verb in verbs for adj in list_ables if re.match('{}e?[aiu]ble$'.format(verb[:-2]), adj)])
 
 cpt_nonable = len(verbs)-cpt_able
 
 print("Nb verbes en er : {}, nb ables : {}, nb non ables : {}".format(len(verbs), cpt_able, cpt_nonable))
 print('=' * 50)
-# Question 2
-in_et_able = [(able, in_able) for able in adjs_freq_able for in_able in adjs_freq_in_able if re.match('^i[nmr]{}'.format(able[0]), in_able[0])]
 
-print("{} adjectifs dérivés en able ont une forme négative (sur {})".format(len(in_et_able), len(adjs_freq_able)+len(adjs_freq_in_able)))
-neg_freq = [(able[0], in_able[0]) for able, in_able in in_et_able if able[1] < in_able[1]]
-print("{0:.2%} % ont des formes négatives plus fréquentes".format(len(neg_freq)/len(in_et_able)))
-#print(repr(neg_freq))
+# Question 2
+in_et_able = [(adj_x_able, adj_in_x_able) for adj_x_able in adjs_freq_able for adj_in_x_able in adjs_freq_able if re.match('^i[nmr]{}'.format(adj_x_able[0]), adj_in_x_able[0])]
+
+print("{} adjectifs dérivés en able ont une forme négative (sur {})".format(len(in_et_able), len(adjs_freq_able)))
+neg_freq = [(adj_x_able[0], adj_in_x_able[0]) for adj_x_able, adj_in_x_able in in_et_able if adj_x_able[1] < adj_in_x_able[1]]
+print("dont {0:.2%} % ont des formes négatives plus fréquentes".format(len(neg_freq)/len(in_et_able)))
+#print(repr(in_et_able))
