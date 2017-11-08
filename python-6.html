@@ -197,7 +197,7 @@ id(word2)
 * Les attributs dans l'exemple ci-dessous sont des variables propres à un objet, une instance
 
 ```python3
-class Word(Object):
+class Word(object):
     """ Classe Word : définit un mot de la langue """
     
     def __init__(self, form, lemma, pos):
@@ -221,7 +221,7 @@ word2.lemma
 * Les attributs de classe seront les mêmes pour tous les objets de cette classe
 
 ```python3
-class Word(Object):
+class Word(object):
     """ Classe Word : définit un mot simple de la langue """
 
     type = 'simple'
@@ -247,7 +247,7 @@ word2.type
 
 
 ```python3
-class Word(Object):
+class Word(object):
     """ Classe Word : définit un mot simple de la langue """
 
     type = 'simple' 
