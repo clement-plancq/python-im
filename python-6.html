@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Python - 6</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+      @import url(http://fonts.googleapis.com/css?family=Droid+Serif);
+      @import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+
+      body {
+        font-family: 'Droid Serif';
+        font-size: 20px;
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+      h1 { font-size: 4em; }
+      h2 { font-size: 2em; }
+      h3 { font-size: 1.6em; }
+      .footnote {
+        position: absolute;
+        bottom: 3em;
+      font-size: 70%;
+      }
+      .small{
+      font-size: 70%;
+      }
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(249, 38, 114);
+        text-decoration: none;
+      }
+      code {
+        -moz-border-radius: 5px;
+        -web-border-radius: 5px;
+        background: #e7e8e2;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      .licorne{
+      background: #FFF0F5; /*LavenderBlush*/
+      }
+
+      .licorne h1{
+      background: transparent url("http://plancq.clement.free.fr/img/licorne.png") no-repeat;
+      padding-left: 80px;
+      color: #8A2BE2;
+      }
+      
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 50%;
+        height: 92%;
+        float: left;
+      }
+      .left-column-black {
+        color: #000;
+        width: 50%;
+        height: 92%;
+        float: left;
+      }
+
+      .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+        }
+      .right-column {
+        width: 45%;
+        float: right;
+        padding-top: 1em;
+      }
+    </style>  
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle, inverse
+
+# Langages de script - Python
+## Cours 6 - classes, objets, bidules
+### M2 Ingénierie Multilingue - INaLCO
+#### Clément Plancq - <small>clement.plancq@ens.fr</small>
+
+---
+# POO
+
+* La programmation orientée objet (POO) est une manière de programmer différente de la programmation procédurale vue jusqu'ici.
+
+  C'est plus qu'un style, l'approche et les outils utilisés sont différents. En informatique on parle de *paradigme*.
+
+* Python fait partie des langages mutli-paradigmes mais le langage lui-même utilise des objets ("*En Python tout est objet*"), ce qui facilite l'approche objet.
+
+* La POO utilise un lexique que vous retrouverez dans d'autres langages objets (Java notamment) : objet, classe, méthode, attribut, instance, héritage, constructeur, introspection, …
+
+* Un objet c'est un bidule, une entité dira la doc officielle. C'est ce que vous voulez, c'est vous qui le définissez.
+
+* Un objet peut être un bidule concret ou abstrait.
+
+* Un objet est construit à partir d'une classe. La classe définit les propriétés de l'objet (les *attributs*) et les actions qui s'y rapportent (les *méthodes*). On dit qu'un objet est une instance de la classe.
+
+---
+# POO
+
+* Les noms de classe s'écrivent avec des majuscules (CapWords convention), les objets en minuscules et underscores
+
+* les objets sont affectés à des variables qui sont des références vers ces objets
+
+
+```python3
+class Word(Object):
+    """ Classe Word : définit un mot de la langue """
+    pass
+
+word = Word() # word est un objet, une instanciation de la classe Word
+type(word) # renvoie la classe qu'instancie l'objet
+id(word) # renvoie l'identifiant de l'objet
+dir(word) # renvoie la liste des attributs de l'objet
+word.__doc__  # renvoie le docstring
+
+word2 = Word()
+id(word2)
+```
+---
+# POO : constructeur et attributs
+
+* Il existe une méthode spéciale `__init__()` qui automatiquement appelée lors de la création d'un objet. C'est le constructeur
+
+* Le constructeur permet de définir un état initial à l'objet, lui donner des attributs par exemple
+
+* Les attributs dans l'exemple ci-dessous sont des variables propres à un objet, une instance
+
+```python3
+class Word(Object):
+    """ Classe Word : définit un mot de la langue """
+    
+    def __init__(self, form, lemma, pos):
+        self.form = form
+        self.lemma = lemma
+        self.pos = pos
+
+word = Word('été', 'être', 'V')
+word.lemma
+>>> 'être'
+word2 = Word('été', 'été', 'NOM')
+word2.lemma
+>>> 'été'
+```
+
+---
+# POO : attributs
+
+* Il y a une distinction entre les attributs d'objet ou d'instance et les attributs de classe
+
+* Les attributs de classe seront les mêmes pour tous les objets de cette classe
+
+```python3
+class Word(Object):
+    """ Classe Word : définit un mot simple de la langue """
+
+    type = 'simple'
+
+    def __init__(self, form, lemma, pos):
+        self.form = form
+        self.lemma = lemma
+        self.pos = pos
+
+word = Word('été', 'être', 'V')
+word.type
+>>> 'simple'
+word2 = Word('été', 'été', 'NOM')
+word2.type
+>>> 'simple'
+```
+
+---
+
+# POO : méthodes
+
+* Les méthodes d'une classe sont des fonctions. Elles indiquent quelles actions peut mener un objet, elles peuvent donner des informations sur l'objet ou encore le modifier.
+
+
+```python3
+class Word(Object):
+    """ Classe Word : définit un mot simple de la langue """
+
+    type = 'simple' 
+
+    def __init__(self, form, lemma, pos):
+        self.form = form
+        self.lemma = lemma
+        self.pos = pos
+
+    def is_inflected(self):
+        if self.form != self.lemma:
+            return True
+        else:
+            return False
+
+    def compare(self, other_word):
+        diff = []
+        if self.form != other_word.form:
+            diff.append('form')
+        ...
+
+```
+
+---
+# POO : héritage
+
+```python3
+class Cake(object):
+    """ un beau gâteau """
+
+    def __init__(self, farine, oeuf, beurre):
+        self.farine = farine
+        self.oeuf = oeuf
+        self.beurre = beurre
+
+    def is_trop_gras(self):
+        if self.farine + self.beurre > 500:
+            return True
+        else:
+            return False
+
+    def cuire(self):
+        return self.beurre / self.oeuf
+```
+
+Cake est la classe mère.
+
+Les classes enfants vont hériter de ses méthodes et de ses attributs.
+
+Cela permet de factoriser le code, d'éviter les répétitions et les erreurs qui en découlent.
+
+---
+# POO : héritage (2)
+    
+```python3
+class CarrotCake(Cake):
+    """ pas seulement pour les lapins
+        hérite de Cake """
+
+    carotte = 3
+    
+    def cuire(self):
+        return self.carotte * self.oeuf
+    
+class ChocolateCake(Cake):
+    """ LE gâteau 
+        hérite de Cake """
+        
+    def is_trop_gras(self):
+        return False
+
+gato_1 = CarrotCake(200, 3, 150)
+gato_1.is_trop_gras()
+>>> False
+gato_1.cuire()
+>>> 9
+gato_2 = ChocolateCake(200, 6, 300)
+gato_2.is_trop_gras()
+>>> False
+```
+
+
+    </textarea>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
