@@ -1,0 +1,2 @@
+jupyter-nbextension install rise --py --user
+jupyter-nbextension enable rise --py --user
