@@ -1,4 +1,4 @@
 gensim
 numpy
 rise
-sk-learn
+scikit-learn
