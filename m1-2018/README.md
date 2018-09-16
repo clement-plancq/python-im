@@ -36,9 +36,9 @@ Tous les supports sont sur [github](https://github.com/clement-plancq/python-im)
 ### 17 septembre 2018 : Passage en revue des bases en Python (Grands Moulins, 7.02)
 
 
-  * [slides](https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python-1.ipynb) ou https://github.com/clement-plancq/python-im/python-1.html pour la version non interactive
+  * [slides](https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python-1.ipynb) ou [ici](https://github.com/clement-plancq/python-im/blob/master/python-1.html) pour la version non interactive
 
-  * Notebook : [pierre-feuilles-ciseaux](https://github.com/clement-plancq/python-im/chifoumi.ipynb)    
+  * Notebook : [pierre-feuilles-ciseaux](https://github.com/clement-plancq/python-im/blob/master/chifoumi.ipynb)    
 
   Télécharger le fichier .ipynb et dans le même dossier taper la commande   
 
