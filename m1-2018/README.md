@@ -19,9 +19,9 @@ Vous serez évalués de la façon suivante :
 
 * devoirs hebdomadaires : 30%
 
-* devoir sur table en décembre : 20%
+* devoir sur table en novembre : 30%
 
-* projet : 50%
+* projet : 40%
 
 
 
