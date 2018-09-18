@@ -29,7 +29,7 @@ Vous serez évalués de la façon suivante :
 
 
 
-Tous les supports sont sur [github](https://github.com/clement-plancq/python-im). 
+Tous les supports sont sur [github](https://github.com/clement-plancq/python-im).
 
 
 
@@ -38,15 +38,15 @@ Tous les supports sont sur [github](https://github.com/clement-plancq/python-im)
 
   * [slides](https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python-1.ipynb) ou [ici](https://github.com/clement-plancq/python-im/blob/master/python-1.html) pour la version non interactive
 
-  * Notebook : [pierre-feuilles-ciseaux](https://github.com/clement-plancq/python-im/blob/master/chifoumi.ipynb)    
+  * Notebook : [pierre-feuilles-ciseaux](https://github.com/clement-plancq/python-im/blob/master/chifoumi.ipynb)
 
-  Télécharger le fichier .ipynb et dans le même dossier taper la commande   
+  Télécharger le fichier .ipynb et dans le même dossier taper la commande
 
   `> jupyter notebook chifoumi.ipynb`
 
   * Exos : Chifoumi, Devinette, [Power of Thor - Episode 1](https://www.codingame.com/training/easy/power-of-thor-episode-1)
 
- 
+
 
 
 # Outils
@@ -95,13 +95,13 @@ Deux options pour l'installation :
 
 	```
 
-	
+
 
 	3. installer jupyter
 
 	```
 
-	sudo pip3 install jupyter
+	python3 -m pip install jupyter
 
 	```
 
@@ -123,7 +123,7 @@ Pas un traitement de texte, pas un IDE, un *[éditeur de texte](https://fr.wikip
 
 
 
-Il y a beaucoup, beaucoup de ressources disponibles pour apprendre Python. Ce qui suit n'est qu'une sélection.  
+Il y a beaucoup, beaucoup de ressources disponibles pour apprendre Python. Ce qui suit n'est qu'une sélection.
 
 
 
@@ -131,11 +131,11 @@ Il y a beaucoup, beaucoup de ressources disponibles pour apprendre Python. Ce qu
 
 
 
-* How to think like a computer scientist, by Jeffrey Elkner, Allen B. Downey, and Chris Meyers.  
+* How to think like a computer scientist, by Jeffrey Elkner, Allen B. Downey, and Chris Meyers.
 
 Vous pouvez l'acheter. Vous pouvez aussi le lire [ici](http://openbookproject.net/thinkcs/python/english3e/)
 
-* Dive into Python, by Mark Pilgrim.  
+* Dive into Python, by Mark Pilgrim.
 
 [Ici](http://www.diveintopython3.net/) vous pouvez le lire ou télécharger le pdf.
 
@@ -143,11 +143,11 @@ Vous pouvez l'acheter. Vous pouvez aussi le lire [ici](http://openbookproject.ne
 
 * Beginning Python, by Magnus Lie Hetland.
 
-* Python Algorithms: Mastering Basic Algorithms in the Python Language, by Magnus Lie Hetland.  
+* Python Algorithms: Mastering Basic Algorithms in the Python Language, by Magnus Lie Hetland.
 
 Peut-être un peu costaud pour des débutants.
 
-* Programmation Efficace. Les 128 Algorithmes Qu'Il Faut Avoir Compris et Codés en Python au Cours de sa Vie, by Christoph Dürr and Jill-Jênn Vie.  
+* Programmation Efficace. Les 128 Algorithmes Qu'Il Faut Avoir Compris et Codés en Python au Cours de sa Vie, by Christoph Dürr and Jill-Jênn Vie.
 
 Si le cours vous paraît trop facile. Le code Python est clair, les difficultés sont commentées. Les algos sont très costauds.
 
