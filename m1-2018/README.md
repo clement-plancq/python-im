@@ -46,8 +46,11 @@ Tous les supports sont sur [github](https://github.com/clement-plancq/python-im)
 
   * Exos : Chifoumi, Devinette, [Power of Thor - Episode 1](https://www.codingame.com/training/easy/power-of-thor-episode-1)
 
+### 24 septembre 2018 : Précisions, fichiers et chaînes de car. (Grands Moulins, 7.02)
+  * [slides](https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python-2.ipynb) ou [ici](https://github.com/clement-plancq/python-im/blob/master/python-2.html) pour la version non interactive
+  * Exos : pour un mot donné par l'utilisateur, comptez et affichez le nombre de voyelles et de consonnes. Pour ceux qui sont à l'aise : [temperatures (CodinGame)](https://www.codingame.com/ide/puzzle/temperatures)
 
-
+### 1er octobre 2018 : Structures de données
 
 # Outils
 
