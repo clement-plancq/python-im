@@ -51,6 +51,9 @@ Tous les supports sont sur [github](https://github.com/clement-plancq/python-im)
   * Exos : pour un mot donné par l'utilisateur, comptez et affichez le nombre de voyelles et de consonnes. Pour ceux qui sont à l'aise : [temperatures (CodinGame)](https://www.codingame.com/ide/puzzle/temperatures)
 
 ### 1er octobre 2018 : Structures de données
+  * [slides](https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python-3.ipynb) ou [ici](https://github.com/clement-plancq/python-im/blob/master/python-3.html) pour la version non interactive
+  * Exos : À partir du fichier tsv [sem_Ef9POe.conll](https://github.com/clement-plancq/python-im/blob/master/sem_Ef9POe.conll) : pour chaque POS listez les types classés par ordre d'occurrence 		    décroissante, pour chaque type de chunk indiquez les longueurs min et max (en nb de mots).
+    Pour ceux qui sont à l'aise : [mime-type (CodinGame)](https://www.codingame.com/training/easy/mime-type)
 
 # Outils
 
