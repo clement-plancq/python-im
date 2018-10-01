@@ -55,6 +55,18 @@ Tous les supports sont sur [github](https://github.com/clement-plancq/python-im)
   * Exos : À partir du fichier tsv [sem_Ef9POe.conll](https://github.com/clement-plancq/python-im/blob/master/sem_Ef9POe.conll) : pour chaque POS listez les types classés par ordre d'occurrence 		    décroissante, pour chaque type de chunk indiquez les longueurs min et max (en nb de mots).
     Pour ceux qui sont à l'aise : [mime-type (CodinGame)](https://www.codingame.com/training/easy/mime-type)
 
+### 8 octobre 2018
+### 15 octobre 2018
+### 22 octobre 2018
+### 5 novembre 2018
+### 12 novembre 2018
+### 19 novembre 2018
+### 26 novembre 2018
+### 3 décembre 2018
+### 10 décembre 2018
+### 17 décembre 2018
+
+
 # Outils
 
 
