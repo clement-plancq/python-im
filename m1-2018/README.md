@@ -57,7 +57,7 @@ Tous les supports sont sur [github](https://github.com/clement-plancq/python-im)
     * Pour ceux qui sont à l'aise : [mime-type (CodinGame)](https://www.codingame.com/training/easy/mime-type)
 
 ### 8 octobre 2018 : Structures de données (2)
-  * [slides](https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python-3.ipynb) ou [ici](https://clement-plancq.github.io/python-im/master/python-3.html) pour la version non interact()ive
+  * [slides](https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python-3.ipynb) ou [ici](https://clement-plancq.github.io/python-im/python-3.html) pour la version non interact()ive
   * Notebook : [dictonnaire de rimes](https://clement-plancq.github.io/python-im/dico-rimes.ipynb)
   * Exos : 
     1. reprendre le script ``voyelles.py`` et compter le nb d'occurrences de chaque voyelle et chaque consonne
