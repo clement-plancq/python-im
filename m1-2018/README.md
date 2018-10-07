@@ -36,9 +36,9 @@ Tous les supports sont sur [github](https://github.com/clement-plancq/python-im)
 ### 17 septembre 2018 : Passage en revue des bases en Python (Grands Moulins, 7.02)
 
 
-  * [slides](https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python-1.ipynb) ou [ici](https://github.com/clement-plancq/python-im/blob/master/python-1.html) pour la version non interactive
+  * [slides](https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python-1.ipynb) ou [ici](https://clement-plancq.github.io/python-im/python-1.html) pour la version non interactive
 
-  * Notebook : [pierre-feuilles-ciseaux](https://github.com/clement-plancq/python-im/blob/master/chifoumi.ipynb)
+  * Notebook : [pierre-feuilles-ciseaux](https://clement-plancq.github.io/python-im/chifoumi.ipynb)
 
   Télécharger le fichier .ipynb et dans le même dossier taper la commande
 
@@ -47,15 +47,18 @@ Tous les supports sont sur [github](https://github.com/clement-plancq/python-im)
   * Exos : Chifoumi, Devinette, [Power of Thor - Episode 1](https://www.codingame.com/training/easy/power-of-thor-episode-1)
 
 ### 24 septembre 2018 : Précisions, fichiers et chaînes de car. (Grands Moulins, 7.02)
-  * [slides](https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python-2.ipynb) ou [ici](https://github.com/clement-plancq/python-im/blob/master/python-2.html) pour la version non interactive
+  * [slides](https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python-2.ipynb) ou [ici](https://clement-plancq.github.io/python-im/python-2.html) pour la version non interactive
   * Exos : pour un mot donné par l'utilisateur, comptez et affichez le nombre de voyelles et de consonnes. Pour ceux qui sont à l'aise : [temperatures (CodinGame)](https://www.codingame.com/ide/puzzle/temperatures)
 
 ### 1er octobre 2018 : Structures de données
-  * [slides](https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python-3.ipynb) ou [ici](https://github.com/clement-plancq/python-im/blob/master/python-3.html) pour la version non interactive
-  * Exos : À partir du fichier tsv [sem_Ef9POe.conll](https://github.com/clement-plancq/python-im/blob/master/sem_Ef9POe.conll) : pour chaque POS listez les types classés par ordre d'occurrence 		    décroissante, pour chaque type de chunk indiquez les longueurs min et max (en nb de mots).
+  * [slides](https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python-3.ipynb) ou [ici](https://clement-plancq.github.io/python-im/master/python-3.html) pour la version non interactive
+  * Exos : À partir du fichier tsv [sem_Ef9POe.conll](https://clement-plancq.github.io/python-im/sem_Ef9POe.conll) : pour chaque POS listez les types classés par ordre d'occurrence décroissante, pour chaque type de chunk indiquez les longueurs min et max (en nb de mots).
     Pour ceux qui sont à l'aise : [mime-type (CodinGame)](https://www.codingame.com/training/easy/mime-type)
 
-### 8 octobre 2018
+### 8 octobre 2018 : Structures de données (2)
+  * [slides](https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python-3.ipynb) ou [ici](https://clement-plancq.github.io/python-im/master/python-3.html) pour la version non interactive
+  * Exos : 
+
 ### 15 octobre 2018
 ### 22 octobre 2018
 ### 5 novembre 2018
