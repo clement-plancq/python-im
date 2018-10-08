@@ -6,15 +6,24 @@ pour trouver la position de la lettre proposée dans le mot à deviner
 'index' ne renvoie que la position du premier item trouvé
 pour 'assis' on ne trouvera que le premier 's' par exemple
 """
+import random
 
-word = "avion"
+def get_words(input_file):
+    res_words = list()
+    with open(input_file) as input_f:
+        for line in input_f:
+            res_words.append(line.rstrip())
+    return res_words
+
+words = get_words('lexique_fr.txt')
+word = words[random.randint(0,len(words))]
 user_word = list("_"*len(word))
 user_tries = int(len(word) * 1.5)
 
 print(f"Saurez-vous deviner ce mot ? vous avez {user_tries} chances")
 print(" ".join(user_word))
 
-while user_tries > 0:
+while True:
     if not("_" in user_word):
         print(f"Gagné ! Le mot était bien {word}")
         break
@@ -29,6 +38,7 @@ while user_tries > 0:
         user_tries -= 1
         if user_tries == 0:
             print(f"Vous avez perdu ! Le mot à deviner était {word}")
+            break
     print(f"Il vous reste {user_tries} chances")
     print(" ".join(user_word))
 

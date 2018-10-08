@@ -42,7 +42,7 @@ user_tries = int(len(word) * 1.5)
 print(f"Saurez-vous deviner ce mot ? vous avez {user_tries} chances")
 print(" ".join(user_word))
 
-while user_tries > 0:
+while True:
     if not(sep in user_word):
         print(f"Gagné ! Le mot était bien {word}")
         break
@@ -56,6 +56,7 @@ while user_tries > 0:
         user_tries -= 1
         if user_tries == 0:
             print(f"Vous avez perdu ! Le mot à deviner était {word}")
+            break
     print(f"Il vous reste {user_tries} chances")
     print(" ".join(user_word))
 
