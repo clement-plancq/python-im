@@ -69,7 +69,16 @@ Tous les supports sont sur [github](https://github.com/clement-plancq/python-im)
   * Exos :
     1. À partir de l'export csv de [https://opendata.paris.fr/explore/dataset/les-titres-les-plus-pretes/](https://opendata.paris.fr/explore/dataset/les-titres-les-plus-pretes/) vous compterez le nombre d'ouvrages par 'type de document' et vous afficherez les types par ordre décroissant
     2. À partir de l'export csv de [https://opendata.paris.fr/explore/dataset/logements_sociaux_finances_a_paris/](https://opendata.paris.fr/explore/dataset/logements_sociaux_finances_a_paris/) vous compterez le nombre de logements sociaux financés par arrondissement. Pour les cinq arrondissements où l'on trouve le plus de logements financés vous afficherez l'évolution par année avec l'année 2001 et l'année précédent comme références.
-### 22 octobre 2018
+
+### 22 octobre 2018 : fonctions et expressions régulières
+* [slides]((https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python-4.ipynb) ou [ici](https://clement-plancq.github.io/python-im/python-4.html) pour la version non interactive)
+* Exos :
+  * Le suffixe -able (ou -ible ou -uble) est utilisé pour former des adjectifs à partir des verbes. Vous travaillerez avec les données de lexique3.81.
+
+    1. Pour chaque verbe du premier groupe (utilisez le lemme) vous vérifierez s’il existe un adjectif en -able. Vous donnerez les décomptes en résultat (combien de verbes avec adjectif -able, combien sans)
+    2. Pour chaque adjectif en -able vous vérifierez s’il existe un dérivé négatif (in-X-able, touchable/intouchable par ex. En plus de l’affichage des comptes vous donnerez le pourcentage d’adjectifs en -able pour lesquels le dérivé négatif est plus fréquent (utilisez la colonne ‘7_freqlemfilms2).
+  * [mime-type (CodinGame)](https://www.codingame.com/training/easy/mime-type)
+
 ### 5 novembre 2018
 ### 12 novembre 2018
 ### 19 novembre 2018
