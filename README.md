@@ -1,4 +1,7 @@
 # python-im
-Python courses for M2 IM (INaLCO)
+Cours de python pour le Master de l'INaLCO
 
-Mostly HTML slides with [remark](https://remarkjs.com/) and jupyter notebooks.
+* [Master 1](https://clement-plancq.github.io/python-im/m1-2018)
+* [Master 2](https://loicgrobol.github.io/python-im/m2-2018)
+
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/clement-plancq/python-im/master)
