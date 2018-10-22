@@ -81,7 +81,7 @@ Tous les supports sont sur [github](https://github.com/clement-plancq/python-im)
 
 ### 5 novembre 2018
 ### 12 novembre 2018
-### 19 novembre 2018
+### 19 novembre 2018 : examen
 ### 26 novembre 2018
 ### 3 décembre 2018
 ### 10 décembre 2018
