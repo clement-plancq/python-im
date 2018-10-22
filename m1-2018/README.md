@@ -68,10 +68,10 @@ Tous les supports sont sur [github](https://github.com/clement-plancq/python-im)
   * Notebook : [dictonnaire de rimes](https://clement-plancq.github.io/python-im/dico-rimes.ipynb)
   * Exos :
     1. À partir de l'export csv de [https://opendata.paris.fr/explore/dataset/les-titres-les-plus-pretes/](https://opendata.paris.fr/explore/dataset/les-titres-les-plus-pretes/) vous compterez le nombre d'ouvrages par 'type de document' et vous afficherez les types par ordre décroissant
-    2. À partir de l'export csv de [https://opendata.paris.fr/explore/dataset/logements_sociaux_finances_a_paris/](https://opendata.paris.fr/explore/dataset/logements_sociaux_finances_a_paris/) vous compterez le nombre de logements sociaux financés par arrondissement. Pour les cinq arrondissements où l'on trouve le plus de logements financés vous afficherez l'évolution par année avec l'année 2001 et l'année précédent comme références.
+    2. À partir de l'export csv de [https://opendata.paris.fr/explore/dataset/logements_sociaux_finances_a_paris/](https://opendata.paris.fr/explore/dataset/logements_sociaux_finances_a_paris/) vous compterez le nombre de logements sociaux financés par arrondissement. Pour les cinq arrondissements où l'on trouve le plus de logements financés vous afficherez l'évolution par année avec l'année 2001 et l'année précédente comme références.
 
 ### 22 octobre 2018 : fonctions et expressions régulières
-* [slides](https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python-4.ipynb) ou [ici](https://clement-plancq.github.io/python-im/python-4.html) pour la version non interactive)
+* [slides](https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python-4.ipynb) ou [ici](https://clement-plancq.github.io/python-im/python-4.html) pour la version non interactive
 * Exos :
   * Le suffixe -able (ou -ible ou -uble) est utilisé pour former des adjectifs à partir des verbes. Vous travaillerez avec les données de lexique3.81.
 
