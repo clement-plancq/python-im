@@ -80,7 +80,7 @@ Tous les supports sont sur [github](https://github.com/clement-plancq/python-im)
   * [mime-type (CodinGame)](https://www.codingame.com/training/easy/mime-type)
 
 ### 5 novembre 2018 : séance de travail sur les dictionnaires
-  * notebook :  [dictonnaire de rimes](https://clement-plancq.github.io/python-im/sms-abréviations.ipynb)
+  * notebook :  [abréviations](https://clement-plancq.github.io/python-im/sms-abréviations.ipynb)
   * Exos : continuer le notebook sur les abréviations. Essayer de découvrir les abréviations inconnues de votre lexique. Vous pouvez essayer ou combiner plusieurs approches.
       1. Repérer les mots de deux, trois ou quatre lettres
       2. Parmi ces mots, distinguer ceux qui n'ont pas de voyelle ou une seule voyelle.
