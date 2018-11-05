@@ -79,7 +79,16 @@ Tous les supports sont sur [github](https://github.com/clement-plancq/python-im)
     2. Pour chaque adjectif en -able vous vérifierez s’il existe un dérivé négatif (in-X-able, touchable/intouchable par ex. En plus de l’affichage des comptes vous donnerez le pourcentage d’adjectifs en -able pour lesquels le dérivé négatif est plus fréquent (utilisez la colonne ‘7_freqlemfilms2).
   * [mime-type (CodinGame)](https://www.codingame.com/training/easy/mime-type)
 
-### 5 novembre 2018
+### 5 novembre 2018 : séance de travail sur les dictionnaires
+  * notebook :  [dictonnaire de rimes](https://clement-plancq.github.io/python-im/sms-abréviations.ipynb)
+  * Exos : continuer le notebook sur les abréviations. Essayer de découvrir les abréviations inconnues de votre lexique. Vous pouvez essayer ou combiner plusieurs approches.
+      1. Repérer les mots de deux, trois ou quatre lettres
+      2. Parmi ces mots, distinguer ceux qui n'ont pas de voyelle ou une seule voyelle.
+      3. Utiliser les fréquences pour distinguer les erreurs de saisie (freq > 2 pour les abréviations).
+      4. S'aider de lexique.org pour distinguer les mots courts du lexique français des abréviations candidates.
+
+      
+
 ### 12 novembre 2018
 ### 19 novembre 2018 : examen
 ### 26 novembre 2018
