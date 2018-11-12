@@ -91,6 +91,8 @@ Tous les supports sont sur [github](https://github.com/clement-plancq/python-im)
 
 ### 12 novembre 2018 : fonctions
 * [slides](https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python-4.ipynb) ou [ici](https://clement-plancq.github.io/python-im/python-4.html) pour la version non interactive
+* notebook : [vocabulaire commun](https://clement-plancq.github.io/python-im/voc-commun.ipynb)
+* séance de travail : À partir des données de [open data IDF](https://data.iledefrance.fr/explore/dataset/les-conservatoires-et-ecoles-de-musique-en-ile-de-france/) sur les conservatoires en IDF et les données de l'INSEE sur la population française par département ([ici](https://www.insee.fr/fr/statistiques/1893198) mais utilisez [ce fichier simplifié](https://clement-plancq.github.io/python-im/estim-pop-dep-sexe-gca-1975-2018-1.csv), calculez le nombre moyen de conservatoires par département et par habitant. Puis faites le même calcul pour les moins de 20 ans.
 * Exos : pas d'exos because révisions
 
 ### 19 novembre 2018 : examen
