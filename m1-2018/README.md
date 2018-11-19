@@ -96,6 +96,9 @@ Tous les supports sont sur [github](https://github.com/clement-plancq/python-im)
 * Exos : pas d'exos because révisions
 
 ### 19 novembre 2018 : examen
+ * [le sujet](https://clement-plancq.github.io/python-im/examen-20181119.pdf)
+ * [les données](https://clement-plancq.github.io/python-im/les-conseillers-de-paris-de-1977-a-2014.csv)
+
 ### 26 novembre 2018
 ### 3 décembre 2018
 ### 10 décembre 2018
