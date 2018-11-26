@@ -98,12 +98,12 @@ Tous les supports sont sur [github](https://github.com/clement-plancq/python-im)
 ### 19 novembre 2018 : examen
  * [le sujet](https://clement-plancq.github.io/python-im/examen-20181119.pdf)
  * [les données](https://clement-plancq.github.io/python-im/les-conseillers-de-paris-de-1977-a-2014.csv)
- * [correction (1)](conseillers.py) [correction (2, avec module csv)](conseillers-2.py)
+ * [correction (1)](https://clement-plancq.github.io/python-im/conseillers.py) [correction (2, avec module csv)](https://clement-plancq.github.io/python-im/conseillers-2.py)
 
 ### 26 novembre 2018 : modules et packages
  * [slides](https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=modules.ipynb) ou [ici](https://clement-plancq.github.io/python-im/modules.html) pour la version non interactive
  * Exos : Écrire un script avec des fonctions et un main qui parse le fichier [conll](https://clement-plancq.github.io/python-im/fr_gsd-ud-test.conllu) et donne le nombre de phrases, le nombre de mots et le nombre de mots d'une catégorie morpho-syntaxique choisie par l'utilisateur.
- 
+
 ### 3 décembre 2018
 ### 10 décembre 2018
 ### 17 décembre 2018
