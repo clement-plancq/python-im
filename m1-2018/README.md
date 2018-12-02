@@ -103,8 +103,13 @@ Tous les supports sont sur [github](https://github.com/clement-plancq/python-im)
 ### 26 novembre 2018 : modules et packages
  * [slides](https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=modules.ipynb) ou [ici](https://clement-plancq.github.io/python-im/modules.html) pour la version non interactive
  * Exos : Écrire un script avec des fonctions et un main qui parse le fichier [conll](https://clement-plancq.github.io/python-im/fr_gsd-ud-test.conllu) et donne le nombre de phrases, le nombre de mots et le nombre de mots d'une catégorie morpho-syntaxique choisie par l'utilisateur.
+   Compter les nombres de séquences ADJ-NOUN et NOUN-ADJ
+   Trouver les têtes qui ont au moins deux dépendants de type ADJ
+   Y-a-t'il des sujets inversés dans le fichier ?
 
 ### 3 décembre 2018
+ *  [slides](https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python6.ipynb) ou [ici](https://clement-plancq.github.io/python-im/python6.html) pour la version non interactive. Merci à [Loïc Grobol](https://github.com/LoicGrobol) pour la refonte compléte des supports.
+
 ### 10 décembre 2018
 ### 17 décembre 2018
 
