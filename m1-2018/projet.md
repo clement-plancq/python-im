@@ -32,3 +32,7 @@ Le code *doit* être commenté. Des tests ce serait bien.
 
 ## Sujet
 
+  1. Open Data
+  Vous travaillerez sur au moins 3 données issues de l'open data dont l'une sera accédée via une API. L'idée ici est de croiser ces données, trouver des variables en commun pour créer un nouveau tableau de données.
+  Exemple : à partir des fichiers d'[adresse des établissements d'enseignements supérieurs du premier et second degrés](https://www.data.gouv.fr/fr/datasets/adresse-et-geolocalisation-des-etablissements-denseignement-du-premier-et-second-degres-1/), [des taux de chômage par département](https://www.insee.fr/fr/statistiques/2012804#tableau-TCRD_025_tab1_departements) et de l'[API des indicateurs relatifs  à l'éducation prioritaire pour les écoles](https://data.education.gouv.fr/explore/dataset/fr-en-ecoles-ep/api/), vous dresserez un tableau des départements français où apparaitront le taux de chômage, le nombre d'écoles, collèges et lycées publics et privés, le nombre d'écoles en éducation prioritaire ainsi que le nombre d'élèves concernés.
+
