@@ -21,7 +21,7 @@ Vous serez évalués de la façon suivante :
 
 * devoir sur table en novembre : 30%
 
-* projet : 40%
+* [projet](https://clement-plancq.github.io/python-im/m1-2018/projet.html) : 40%
 
 
 
@@ -103,7 +103,7 @@ Tous les supports sont sur [github](https://github.com/clement-plancq/python-im)
 ### 26 novembre 2018 : modules et packages
  * [slides](https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=modules.ipynb) ou [ici](https://clement-plancq.github.io/python-im/modules.html) pour la version non interactive
  * Exos : Écrire un script avec des fonctions et un main qui parse le fichier [conll](https://clement-plancq.github.io/python-im/fr_gsd-ud-test.conllu) et donne le nombre de phrases, le nombre de mots et le nombre de mots d'une catégorie morpho-syntaxique choisie par l'utilisateur.
-   [Correction simple](https://clement-plancq.github.io/python-im/exos/cpt_conllu.py), [version objet](https://clement-plancq.github.io/python-im/exos/parse_conllu.py) (enfin c'est à vous d'utiliser les classes proposées)
+   [Correction simple](https://clement-plancq.github.io/python-im/exos/cpt_conllu.py), [version objet](https://clement-plancq.github.io/python-im/exos/parse_conllu.py) (enfin c'est à vous d'utiliser les classes proposées)  
    Trouver les mots dont le lemme se termine en 'ment' qui ne sont pas des adverbes, les afficher avec un classement par fonction  
    Compter les nombres de séquences ADJ-NOUN et NOUN-ADJ  
    Trouver les têtes qui ont au moins deux dépendants de type ADJ  
