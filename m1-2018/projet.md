@@ -32,5 +32,10 @@ Le code *doit* être commenté.
 
   1. Open Data
   Vous travaillerez sur au moins 3 données issues de l'open data dont l'une sera accédée via une API. L'idée ici est de croiser ces données, trouver des variables en commun pour créer un nouveau tableau de données.
+  
   Exemple : à partir des fichiers d'[adresse des établissements d'enseignements supérieurs du premier et second degrés](https://www.data.gouv.fr/fr/datasets/adresse-et-geolocalisation-des-etablissements-denseignement-du-premier-et-second-degres-1/), [des taux de chômage par département](https://www.insee.fr/fr/statistiques/2012804#tableau-TCRD_025_tab1_departements) et de l'[API des indicateurs relatifs  à l'éducation prioritaire pour les écoles](https://data.education.gouv.fr/explore/dataset/fr-en-ecoles-ep/api/), vous dresserez un tableau des départements français où apparaitront le taux de chômage, le nombre d'écoles, collèges et lycées publics et privés, le nombre d'écoles en éducation prioritaire ainsi que le nombre d'élèves concernés.
 
+  2. UD et graphes
+  Vous concevrez un programme ou un module qui prend en entrée un fichier ou des fichiers au format UD. Chacune des phrases contenues dans le ou les fichiers d'entrée devra être représentée en mémoire sous forme de [graphe](https://fr.wikipedia.org/wiki/Graphe_(type_abstrait)).  
+  votre programme devra être capable de trouver et afficher les chemin de dépendance entre deux mots (ou deux lemmes ou deux POS) donnée par l'utilisateur.  
+  Sur les graphes et leur implémentation vous pouvez consulter [Graphs in Python](https://www.python-course.eu/graphs_python.php), [Python Patterns - Implementing Graphs](https://www.python.org/doc/essays/graphs/) et également la documentation de l'outil [Grew](http://grew.fr)
