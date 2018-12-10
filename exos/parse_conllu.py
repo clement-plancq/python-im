@@ -23,7 +23,7 @@ class Word:
         
     def __str__(self):
         text = "{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}".format(
-            self.nid, self.token, self.lemma, self.upos, self.xpos, self.feats,
+            self.nid, self.form, self.lemma, self.upos, self.xpos, self.feats,
             self.head, self.dep_rel, self.deps, self.misc)
         return text
 
