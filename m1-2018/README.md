@@ -115,8 +115,9 @@ Tous les supports sont sur [github](https://github.com/clement-plancq/python-im)
 ### 3 décembre 2018 : classes, objets
  *  [slides](https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python-6.ipynb) ou [ici](https://clement-plancq.github.io/python-im/python-6.html) pour la version non interactive. Merci à [Loïc Grobol](https://github.com/LoicGrobol) pour la refonte compléte des supports.
 
-### 10 décembre 2018
-### 17 décembre 2018
+### 10 décembre 2018 : classes, objets
+
+### 17 décembre 2018 : travail en groupes sur le projet
 
 
 # Outils
