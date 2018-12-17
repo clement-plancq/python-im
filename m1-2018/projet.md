@@ -2,7 +2,7 @@
 
 ## Consignes
 
-* Projet à rendre le 6 janvier *au plus tard*
+* Projet à rendre le 13 janvier *au plus tard*
 
 * Projet collectif, par groupe de 2 ou 3 (sauf exception)
 
