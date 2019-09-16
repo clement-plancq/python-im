@@ -47,7 +47,7 @@ Tous les supports sont sur [github](https://github.com/clement-plancq/python-im)
 
   `> python3 -m jupyter notebook chifoumi.ipynb`
 
-  * Exos : Chifoumi, Devinette, [Power of Thor - Episode 1](https://www.codingame.com/training/easy/power-of-thor-episode-1)
+  * Exos : script qui détermine si un nombre est pair ou impair (utilisez `input()`), [Power of Thor - Episode 1](https://www.codingame.com/training/easy/power-of-thor-episode-1)
 
 ### 23 septembre 2019 : Précisions, fichiers et chaînes de car. (Grands Moulins, 7.02)
   * [slides](https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python-2.ipynb) ou [ici](https://clement-plancq.github.io/python-im/python-2.html) pour la version non interactive
