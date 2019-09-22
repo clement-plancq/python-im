@@ -9,7 +9,7 @@ def draw(coups):
     Coup aléatoire au chifoumi 
     pas d'arguments
     """
-    coup = coups[random.randint(0,2)]
+    coup = random.choice(coups)
     return coup
 
 def rules(player_1, player_2):
@@ -41,21 +41,21 @@ def rules(player_1, player_2):
 coups = ["pierre", "feuille", "ciseaux"]
 emojis = {'pierre': "\u270A", 'feuille': "\u270B", 'ciseaux': "\u270C"}
 result = ['égalité', 'victoire', 'défaite']
-final_result = {'égalité': 0, 'jeckel': 0, 'heckel': 0}
+final_result = {'égalité': 0, 'sarah': 0, 'skynet': 0}
 
 for i in range(3):
     print("tour {}".format(i + 1))
-    heckel = draw(coups)
-    jeckel = input("Vous êtes Jeckel.\nÀ vous de jouer [pierre, feuille, ciseaux] : ")
-    if not(jeckel in coups):
+    skynet = draw(coups)
+    sarah = input("Vous êtes Sarah.\nÀ vous de jouer [pierre, feuille, ciseaux] : ")
+    if not(sarah in coups):
         raise ValueError("Tricheur !")
-    winner = rules(jeckel, heckel)
-    print("Heckel : {} {}, Jeckel : {} {}, {}".format(heckel, emojis[heckel], jeckel, emojis[jeckel], result[winner]))
+    winner = rules(sarah, skynet)
+    print(f"skynet : {skynet} {emojis[skynet]}, sarah : {sarah} {emojis[sarah]}, {result[winner]}")
     if winner == 0:
         final_result["égalité"] += 1
     elif winner == 1:
-        final_result["jeckel"] += 1
+        final_result["sarah"] += 1
     else:
-        final_result["heckel"] += 1
+        final_result["skynet"] += 1
         
 print("Victoire finale de {}".format(max(final_result, key=final_result.get)))
