@@ -49,7 +49,7 @@ Tous les supports sont sur [github](https://github.com/clement-plancq/python-im)
 
   * Exos : script qui détermine si un nombre est pair ou impair (utilisez `input()`), [Power of Thor - Episode 1](https://www.codingame.com/training/easy/power-of-thor-episode-1)
 
-### ### 23 septembre 2019 : Passage en revue des bases en Python (suite)
+### 23 septembre 2019 : Passage en revue des bases en Python (suite)
   * [slides](https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python-1.ipynb) ou [ici](https://clement-plancq.github.io/python-im/python-1.html) pour la version non interactive
 
   * Notebook : [pierre-feuilles-ciseaux](https://clement-plancq.github.io/python-im/chifoumi.ipynb)
