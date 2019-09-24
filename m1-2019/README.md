@@ -49,11 +49,23 @@ Tous les supports sont sur [github](https://github.com/clement-plancq/python-im)
 
   * Exos : script qui détermine si un nombre est pair ou impair (utilisez `input()`), [Power of Thor - Episode 1](https://www.codingame.com/training/easy/power-of-thor-episode-1)
 
-### 23 septembre 2019 : Précisions, fichiers et chaînes de car. (Grands Moulins, 7.02)
+### ### 23 septembre 2019 : Passage en revue des bases en Python (suite)
+  * [slides](https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python-1.ipynb) ou [ici](https://clement-plancq.github.io/python-im/python-1.html) pour la version non interactive
+
+  * Notebook : [pierre-feuilles-ciseaux](https://clement-plancq.github.io/python-im/chifoumi.ipynb)
+
+  * Exos : 
+    - faîtes votre propre chifoumi en vous inspirant du notebook
+	- script devinette, l'utilisateur a 3 essais pour deviner un chiffre entre 0 et 10
+	- [Power of Thor - Episode 1](https://www.codingame.com/training/easy/power-of-thor-episode-1)
+
+
+
+### 30 septembre 2019 : Précisions, fichiers et chaînes de car. (Grands Moulins, 7.02)
   * [slides](https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python-2.ipynb) ou [ici](https://clement-plancq.github.io/python-im/python-2.html) pour la version non interactive
   * Exos : pour un mot donné par l'utilisateur, comptez et affichez le nombre de voyelles et de consonnes. Pour ceux qui sont à l'aise : [temperatures (CodinGame)](https://www.codingame.com/ide/puzzle/temperatures)
 
-### 30 septembre 2019 : Structures de données
+### 7 octobre 2019 : Structures de données
   * [slides](https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python-3.ipynb) ou [ici](https://clement-plancq.github.io/python-im/python-3.html) pour la version non interactive
   * Exos : 
     * À partir du fichier tsv [sem_Ef9POe.conll](https://clement-plancq.github.io/python-im/sem_Ef9POe.conll) : pour chaque POS listez les types classés par ordre d'occurrence décroissante, pour chaque type de chunk indiquez les longueurs min et max (en nb de mots).
