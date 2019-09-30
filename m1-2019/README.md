@@ -63,7 +63,10 @@ Tous les supports sont sur [github](https://github.com/clement-plancq/python-im)
 
 ### 30 septembre 2019 : Précisions, fichiers et chaînes de car. (Grands Moulins, 7.02)
   * [slides](https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python-2.ipynb) ou [ici](https://clement-plancq.github.io/python-im/python-2.html) pour la version non interactive
-  * Exos : pour un mot donné par l'utilisateur, comptez et affichez le nombre de voyelles et de consonnes. Pour ceux qui sont à l'aise : [temperatures (CodinGame)](https://www.codingame.com/ide/puzzle/temperatures)
+  * Exos :  
+    - pour un mot donné par l'utilisateur, comptez et affichez le nombre de voyelles et de consonnes
+    - pour ceux qui ne l'ont pas fait : chifoumi avec plusieurs manches, le premier à deux victoires gagne la partie
+    - [temperatures (CodinGame)](https://www.codingame.com/ide/puzzle/temperatures)
 
 ### 7 octobre 2019 : Structures de données
   * [slides](https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python-3.ipynb) ou [ici](https://clement-plancq.github.io/python-im/python-3.html) pour la version non interactive
