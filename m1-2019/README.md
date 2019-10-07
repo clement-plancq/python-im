@@ -69,14 +69,14 @@ Tous les supports sont sur [github](https://github.com/clement-plancq/python-im)
     - [temperatures (CodinGame)](https://www.codingame.com/ide/puzzle/temperatures)
 
 ### 7 octobre 2019 : Structures de données
-  * python-2 : [slides])(https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python-2.ipynb), [html](https://clement-plancq.github.io/python-im/python-2.html) et python-3 [slides]((https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python-3.ipynb), [html](https://clement-plancq.github.io/python-im/python-3.html)
+  * python-2 : [slides](https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python-2.ipynb), [html](https://clement-plancq.github.io/python-im/python-2.html) et python-3 [slides]((https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python-3.ipynb), [html](https://clement-plancq.github.io/python-im/python-3.html))
   * Exos : 
     * À partir du fichier Lexique383.tsv (voir [lexique.org](http://www.lexique.org/)) générez 3 fichiers avec les colonnes 'ortho', 'phon', 'lemme' pour les noms, les verbes et les adjectifs
     * Lisez attentivement les slides python-4
     * Pour ceux qui sont à l'aise [mime-type (CodinGame)](https://www.codingame.com/training/easy/mime-type)
 
 ### 14 octobre 2019 : Fonctions et regex
- * python-4 : [slides])(https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python-4.ipynb), [html](https://clement-plancq.github.io/python-im/python-4.html)
+ * python-4 : [slides](https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python-4.ipynb), [html](https://clement-plancq.github.io/python-im/python-4.html)
 
 # Outils
 
