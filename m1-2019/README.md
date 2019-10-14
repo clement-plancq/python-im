@@ -74,8 +74,17 @@ Tous les supports sont sur [github](https://github.com/clement-plancq/python-im)
     * À partir du fichier Lexique383.tsv (voir [lexique.org](http://www.lexique.org/)) générez 3 fichiers avec les colonnes 'ortho', 'phon', 'lemme' pour les noms, les verbes et les adjectifs
     * Lisez attentivement les slides python-3
     * Pour ceux qui sont à l'aise [mime-type (CodinGame)](https://www.codingame.com/training/easy/mime-type)
+    
+### 14 octobre : Structures de données
+ * python-3 [slides]((https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python-3.ipynb), [html](https://clement-plancq.github.io/python-im/python-3.html))
+ * Exos :
+  1. reprendre le script ``voyelles.py`` et compter le nb d'occurrences de chaque voyelle et chaque consonne à l'aide d'un objet Counter
+  2. compter le nb d'occurrences de chaque mot de [brise marine](https://raw.githubusercontent.com/clement-plancq/python-im/master/brise-marine.txt). Utilisez un objet Counter
+  3. à partir du fichier tsv [sem_Ef9POe.conll](https://raw.githubusercontent.com/clement-plancq/python-im/master/sem_Ef9POe.conll)
+    * pour chaque POS listez les types classés par ordre d'occurrence décroissante,  
+    * pour chaque type de chunk indiquez les longueurs min et max (en nb de mots)
 
-### 14 octobre 2019 : Fonctions et regex
+### 21 octobre 2019 : Fonctions et regex
  * python-4 : [slides](https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python-4.ipynb), [html](https://clement-plancq.github.io/python-im/python-4.html)
 
 # Outils
