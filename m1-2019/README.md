@@ -84,8 +84,33 @@ Tous les supports sont sur [github](https://github.com/clement-plancq/python-im)
     * pour chaque POS listez les types classés par ordre d'occurrence décroissante,  
     * pour chaque type de chunk indiquez les longueurs min et max (en nb de mots)
 
-### 21 octobre 2019 : Fonctions et regex
+### 21 octobre 2019 : Fonctions ~~et regex~~
  * python-4 : [slides](https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python-4.ipynb), [html](https://clement-plancq.github.io/python-im/python-4.html)
+
+ * Exos :
+   1. Marché
+    1. Créer un dictionnaire qui encode le tableau des prix suivants:
+    bananes : 2€/kg, clémentines: 3,25€/kg, pommes: 3€/kg, poires: 3,5€/kg, mangues: 3€/pièce
+    2. Ajouter le raisin blanc à 4€/kg et les oranges à 2,5€/kg
+    3. Calculer le prix d'un panier contenant 2kg de bananes, 1,5kg de raisin blanc, 2kg de pommes, 3 mangues
+   2. Prénoms
+   Travail sur l'export csv de [Liste des prénoms 2004 à 2018 (opendata.paris.fr)](https://opendata.paris.fr/explore/dataset/liste_des_prenoms/)
+    1. Quels sont les 10 prénoms les plus courants
+    2. Quels sont les 10 prénoms féminins et masculins les plus courants 
+    3. Indiquez le nombre de naissances par an et par sexe
+    4. Quels sont les prénoms masculins et féminins qui sont en baisse en 2017 et 2018
+    
+### 4 novembre 2019
+
+### 18 novembre 2019 : évaluation
+
+### 25 novembre 2019
+
+### 2 décembre 2019
+
+### 9 décembre 2019
+
+### 16 décembre 2019
 
 # Outils
 
