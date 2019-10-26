@@ -99,6 +99,9 @@ Tous les supports sont sur [github](https://github.com/clement-plancq/python-im)
       2. Quels sont les 10 prénoms féminins et masculins les plus courants 
       3. Indiquez le nombre de naissances par an et par sexe
       4. Quels sont les prénoms masculins et féminins qui sont en baisse en 2017 et 2018
+   3. Moyennes
+      Écrivez un script qui reçoit un fichier csv de tableau de notes à double entrée élèves/matières comme vu en cours. Le script doit calculer les moyennes
+      de chaque élève et chaque matière. Utilisez des dictionnaires.
 
 ### 4 novembre 2019
 
