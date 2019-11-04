@@ -103,7 +103,13 @@ Tous les supports sont sur [github](https://github.com/clement-plancq/python-im)
       Écrivez un script qui reçoit un fichier csv de tableau de notes à double entrée élèves/matières comme vu en cours. Le script doit calculer les moyennes
       de chaque élève et chaque matière. Utilisez des dictionnaires.
 
-### 4 novembre 2019
+### 4 novembre 2019 : Fonctions et regex
+* python-4 : [slides](https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python-4.ipynb), [html](https://clement-plancq.github.io/python-im/python-4.html)
+
+ * Exos :
+   1. Lire la documentation du [module csv](https://docs.python.org/3.7/library/csv.html)
+   2. Examen 2018 : [sujet](https://github.com/clement-plancq/python-im/raw/gh-pages/examen-20181119.pdf), [données](https://opendata.paris.fr/explore/dataset/les-conseillers-de-paris-de-1977-a-2014/information/)
+   3. À l'aide du module [requests](https://requests.kennethreitz.org/en/master/) trouver les liens hypertextes présents dans la page https://www.reddit.com/r/Python/ et les afficher sous la forme ancre: url.
 
 ### 18 novembre 2019 : évaluation
 
