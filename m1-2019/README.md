@@ -112,6 +112,8 @@ Tous les supports sont sur [github](https://github.com/clement-plancq/python-im)
    3. À l'aide du module [requests](https://requests.kennethreitz.org/en/master/) trouver les liens hypertextes présents dans la page https://www.reddit.com/r/Python/ (ou https://news.ycombinator.com/news) et les afficher sous la forme ancre: url.
 
 ### 18 novembre 2019 : évaluation
+  * [sujet](https://raw.githubusercontent.com/clement-plancq/python-im/master/examen-2019/examen-20191118.pdf)
+  * [les_etablissements_hospitaliers_franciliens.csv](https://raw.githubusercontent.com/clement-plancq/python-im/master/examen-2019/les_etablissements_hospitaliers_franciliens.csv), [lecun-pos.txt](https://raw.githubusercontent.com/clement-plancq/python-im/master/examen-2019/lecun-pos.txt)
 
 ### 25 novembre 2019
 
