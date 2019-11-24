@@ -15,7 +15,7 @@ def main():
     # les clés sont les en-têtes de colonne
     with open(input_file) as input:
         reader = csv.DictReader(input, delimiter=';')                                                               
-        for item in reader:                                                                                                                                             
+        for item in reader:
             data.append(item)      
 
     # question 1 : combien y-a-t'il d'établissements
@@ -24,7 +24,7 @@ def main():
 
     # question 2 : compter les établissements par département
     departements = Counter()
-    for item in data:                                                                                                                                               
+    for item in data:
         departements[item['DEPT']] += 1
     print(f"Nb d'établissements par département")
     for dept, nb in departements.items():
@@ -34,8 +34,8 @@ def main():
     # question 3 : Compter les établissements de type
     # ‘Centres Hospitaliers Spécialisés Lutte Maladies Mentales’ par département
     departements = Counter()
-    for item in data:                                                                                                                                            
-        if item['TYPE_ETABLISSEMENT'] == 'Centres Hospitaliers Spécialisés Lutte Maladies Mentales':                                                               
+    for item in data:
+        if item['TYPE_ETABLISSEMENT'] == 'Centres Hospitaliers Spécialisés Lutte Maladies Mentales':
             departements[item['DEPT']] += 1  
     print(f"Nb d'établissements de type 'Luttes Maladies Mentales' par département")
     for dept, nb in departements.items():
