@@ -118,13 +118,13 @@ Tous les supports sont sur [github](https://github.com/clement-plancq/python-im)
 ### 25 novembre 2019 : fonctions
   * python-4 : [slides](https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python-4.ipynb), [html](https://clement-plancq.github.io/python-im/python-4.html)
   * Exos :
-    1. Vous travaillerez avec les données de [lexique.org](http://www.lexique.org/)
+    1. Vous travaillerez avec les données de [lexique.org](http://www.lexique.org/)  
      Pour chaque verbe du premier groupe (utilisez le lemme) vous vérifierez s'il existe un adjectif en -able. Vous donnerez les décomptes en résultat (combien de verbes avec adjectif -able, combien sans)
-    2. À l'aide d'une fonction, trouver dans les données de [lexique.org](http://www.lexique.org/) les noms et adjectifs qui ont pour suffixe : 'ure', 'ment', 'a|ible', 'ette', 'ion', 'age'
-    3. Trouver dans le fichier [https://github.com/UniversalDependencies/UD_French-Sequoia/blob/master/fr_sequoia-ud-test.conllu](https://github.com/UniversalDependencies/UD_French-Sequoia/blob/master/fr_sequoia-ud-test.conllu) les mots qui ont au moins une lettre redoublée (ex: attaque). Sortie : mot, lettre
+    2. À l'aide d'une fonction, trouver dans les données de [lexique.org](http://www.lexique.org/) les noms et adjectifs qui ont pour suffixe : 'ure', 'ment', 'a|ible', 'ette', 'ion', 'age'  
+    3. Trouver dans le fichier [fr_sequoia-ud-test.conllu](https://github.com/UniversalDependencies/UD_French-Sequoia/blob/master/fr_sequoia-ud-test.conllu) les mots qui ont au moins une lettre redoublée (ex: attaque). Sortie : mot, lettre
 
 ### 2 décembre 2019
-  * * python-6 : [slides](https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python-6.ipynb), [html](https://clement-plancq.github.io/python-im/python-6.html)
+  * python-6 : [slides](https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python-6.ipynb), [html](https://clement-plancq.github.io/python-im/python-6.html)
 
 ### 9 décembre 2019
 
