@@ -126,10 +126,14 @@ Tous les supports sont sur [github](https://github.com/clement-plancq/python-im)
     3. Trouver dans le fichier [fr_sequoia-ud-test.conllu](https://github.com/UniversalDependencies/UD_French-Sequoia/blob/master/fr_sequoia-ud-test.conllu) les mots qui ont au moins une lettre redoublée (ex: attaque). Sortie : mot, lettre
 
 ### 2 décembre 2019
-  * Révisions : 
+  * Révisions
+    Dans le texte [ventre de Paris](https://github.com/clement-plancq/python-im/blob/master/zola_ventre-de-paris.txt), trouvez tous les mots commençant par une majuscule. Générez un fichier csv avec 3 colonnes : contexte gauche (5 mots), mot, contexte droit (5 mots).
+
   * python-5 : [slides](https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python-5.ipynb), [html](https://clement-plancq.github.io/python-im/python-5.html)  
   [generateurs](https://github.com/clement-plancq/python-im/blob/master/generateur.ipynb)  
   [anacycliques](https://github.com/clement-plancq/python-im/blob/master/anacycliques.ipynb)
+
+  * Exos : [scrabble (codingame)](https://www.codingame.com/training/medium/scrabble)
 
 
 ### 9 décembre 2019
