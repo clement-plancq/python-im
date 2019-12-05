@@ -24,7 +24,7 @@ Vous serez évalués de la façon suivante :
 
 * devoir sur table en novembre : 30%
 
-* projet : 40%
+* [projet](https://clement-plancq.github.io/python-im/m1-2019/projet.html) : 40%
 
 
 
