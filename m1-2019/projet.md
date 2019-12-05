@@ -22,8 +22,8 @@ Le rendu devra comporter :
    C'est de la doc technique, pas une dissertation. La doc pourra prendre la format d'un ou plusieurs fichiers, d'un site web, d'un notebook, à votre convenance
 
 2. le code Python et les codes annexes (JS par ex.) que vous avez produit.
-
-Le code *doit* être commenté.
+  
+    Le code *doit* être commenté.
 
 3. les données en input et en output (ou un échantillon si le volume est important)
 
@@ -33,18 +33,19 @@ Vous choisirez un sujet parmi les deux :
 
 1. Open Data
 
-  Vous travaillerez sur 3 données issues de l'open data.
+    Vous travaillerez sur 3 données issues de l'open data.
 
-  * [https://www.data.gouv.fr/fr/datasets/panorama-des-festivals/](https://www.data.gouv.fr/fr/datasets/panorama-des-festivals/)
-  * [https://www.data.gouv.fr/fr/datasets/densites-de-population-par-commune/](https://www.data.gouv.fr/fr/datasets/densites-de-population-par-commune/)
-  * [https://www.data.gouv.fr/fr/datasets/revenus-des-francais-a-la-commune/](https://www.data.gouv.fr/fr/datasets/revenus-des-francais-a-la-commune/)
+    * [https://www.data.gouv.fr/fr/datasets/panorama-des-festivals/](https://www.data.gouv.fr/fr/datasets/panorama-des-festivals/)
+    * [https://www.data.gouv.fr/fr/datasets/densites-de-population-par-commune/](https://www.data.gouv.fr/fr/datasets/densites-de-population-par-commune/)
+    * [https://www.data.gouv.fr/fr/datasets/revenus-des-francais-a-la-commune/](https://www.data.gouv.fr/fr/datasets/revenus-des-francais-a-la-commune/)
   
-  Vous travaillerez sur ces données, soit avec [sqlite3](https://docs.python.org/3.8/library/sqlite3.html) soit avec [pandas](https://pandas.pydata.org/) de façon à répondre aux questions suivantes:
-  - Compter le nombre de festival par domaine pour chaque commune puis chaque département puis par mois
-  - Comparer le nombre de festival avec les revenus par commune puis la densité de population
-  - Comparer les festivals ayant lieu en juin/juillet/août avec ceux ayant lieu les autres mois de l'année. Y-a-t'il plus de festivals dans les zones peu denses en été ou pendant les autres mois ?
-  - Trouver au moins deux questions se rapportant à ces données et répondez y.
-  N'hésitez pas à produire des graphiques. 
+    Vous travaillerez sur ces données, soit avec [sqlite3](https://docs.python.org/3.8/library/sqlite3.html) soit avec [pandas](https://pandas.pydata.org/) de façon à répondre aux questions suivantes:
+    - Compter le nombre de festival par domaine pour chaque commune puis chaque département puis par mois
+    - Comparer le nombre de festival avec les revenus par commune puis la densité de population
+    - Comparer les festivals ayant lieu en juin/juillet/août avec ceux ayant lieu les autres mois de l'année. Y-a-t'il plus de festivals dans les zones peu denses en été ou pendant les autres mois ?
+    - Trouver au moins deux questions se rapportant à ces données et répondez y.
+
+    N'hésitez pas à produire des graphiques. 
 
 2. UD et graphes
 
