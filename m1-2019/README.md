@@ -136,10 +136,11 @@ Tous les supports sont sur [github](https://github.com/clement-plancq/python-im)
   * Exos : [scrabble (codingame)](https://www.codingame.com/training/medium/scrabble)
 
 
-### 9 décembre 2019
+### 9 décembre 2019 : objets
   * python-6 : [slides](https://mybinder.org/v2/gh/clement-plancq/python-im/master?filepath=python-6.ipynb), [html](https://clement-plancq.github.io/python-im/python-6.html)
 
-### 16 décembre 2019
+### 16 décembre 2019 : projet
+  * exemples de script avec `sqlite3`: [populate.py](https://github.com/clement-plancq/python-im/blob/master/exos/20191216/populate.py), [query_sqlite3.py](https://github.com/clement-plancq/python-im/blob/master/exos/20191216/query_sqlite3.py), avec `pandas` : [query_pandas.py](https://github.com/clement-plancq/python-im/blob/master/exos/20191216/query_pandas.py)
 
 # Outils
 
