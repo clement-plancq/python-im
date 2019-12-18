@@ -4,6 +4,8 @@
 
 * Projet à rendre le 10 janvier 2020 *au plus tard*
 
+* Framapad avec vos questions/réponses : [https://bimestriel.framapad.org/p/9dxn-projet-python2019-m1-inalco](https://bimestriel.framapad.org/p/9dxn-projet-python2019-m1-inalco)
+
 * Projet individuel ou collectif, par groupe de 2
 
 Le rendu devra comporter :
